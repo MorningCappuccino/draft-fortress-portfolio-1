@@ -1,0 +1,32 @@
+{
+  "name": "draft-fortresss-portfolio-1",
+  "version": "1.0.0",
+  "description": "Our first team portfolio",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "gulp"
+  },
+  "keywords": [
+    "portfolio",
+    "team"
+  ],
+  "author": "MorningCappuccino",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "browser-sync": "^2.29.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-bulk-importer": "^3.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^3.0.0",
+    "normalize.css": "^8.0.1",
+    "require-dir": "^1.2.0",
+    "sass": "^1.62.0"
+  }
+}
