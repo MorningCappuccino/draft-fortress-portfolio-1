@@ -1,2 +1,15 @@
+// === COLORS
 $white: #fff;
 $black: #000;
+// END_COLORS
+
+$breakpoints: (
+  xs: 480px,
+  sm: 768px,
+  md: 1000px,
+);
+
+// === TRANSITION
+$transition-function: ease-in-out;
+$transition-duration: 200ms;
+// === END_TRANSITION

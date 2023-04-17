@@ -11,6 +11,9 @@
     "team"
   ],
   "author": "MorningCappuccino",
+  "contributes": {
+    "contributor": { "name": "Valery Chyzhykau", "url": "https://github.com/Godox123" }
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.4",

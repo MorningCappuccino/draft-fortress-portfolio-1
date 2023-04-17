@@ -1,0 +1,5 @@
+@mixin transition($function, $duration, $props...) {
+  @each $prop in $props {
+    transition: $prop $duration $function;
+  }
+}
