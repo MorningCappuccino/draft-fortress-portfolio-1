@@ -1,5 +1,30 @@
+$color : #FFFFFF;
+
 .navigation {
+    width: 333px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     a {
         text-decoration: none;
+        color: $color;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
     }
 }
+.header__container {
+    justify-content: space-between;
+    @include desktop-container();
+    display: flex;
+    background: #212121;
+}  
+.logo {
+    padding: 28px 0;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 47px;
+    color: $color ;
+}
+
