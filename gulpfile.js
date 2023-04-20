@@ -8,6 +8,8 @@ exports.dev_js = tasks.dev_js;
 exports.html = tasks.html;
 exports.bs_html = tasks.bs_html;
 exports.watch = tasks.watch;
+exports.rastr = tasks.rastr;
+exports.webp = tasks.webp;
 
 exports.default = gulp.parallel(
   exports.libs_style,
@@ -15,5 +17,7 @@ exports.default = gulp.parallel(
   exports.dev_js,
   exports.html,
   exports.bs_html,
-  exports.watch
+  exports.watch,
+  exports.rastr,
+  exports.webp,
 )
