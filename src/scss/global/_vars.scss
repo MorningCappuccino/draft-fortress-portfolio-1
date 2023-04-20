@@ -5,7 +5,10 @@ $black: #212121;
 $gray: #333333;
 $gray2: #4F4F4F;
 // END_COLORS
-
+// === TRANSITION
+$transition-function: ease-in-out;
+$transition-duration: 200ms;
+// === END_TRANSITION
 $breakpoints: (
   xs: 480px,
   sm: 768px,
@@ -24,6 +27,7 @@ $breakpoints: (
   line-height: 23px;
   color: $white;
 }
+
 %button {
   width: 143px;
   height: 42px;
@@ -52,7 +56,4 @@ $breakpoints: (
   }
 }
 
-// === TRANSITION
-$transition-function: ease-in-out;
-$transition-duration: 200ms;
-// === END_TRANSITION
+
