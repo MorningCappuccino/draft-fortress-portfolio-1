@@ -4,6 +4,7 @@ $white: #fff;
 $black: #212121;
 $gray: #333333;
 $gray2: #4F4F4F;
+
 // END_COLORS
 // === TRANSITION
 $transition-function: ease-in-out;
@@ -37,15 +38,11 @@ $breakpoints: (
   color: $white;
   border: none;
   display: block;
+  cursor: pointer;
   &:hover {
     background: #13492a;
     transition: $transition-duration;
   }
-}
-%what__item {
-  width: 349px;
-  height: 241px;
-  background: $gray;
 }
 @mixin desktop-container() {
   @include respond-above(md) {
