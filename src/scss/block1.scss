@@ -1,106 +1,109 @@
-
-@import 'global/vars';
+@import "global/1vars";
 @import "base/mixins";
 
 .wrapper {
+
     background: $black;
     font-family: 'Roboto', sans-serif;
     user-select: none;
+
+  background: $black;
+  font-family: "Roboto", sans-serif;
+
 }
 .hello__container {
-    @include desktop-container();
-    display: flex;
+  @include desktop-container();
+  display: flex;
 }
 .hello__content {
-    margin-left: 48px;
-    flex: 0 1 45%;
+  margin-left: 48px;
+  flex: 0 1 45%;
 }
 .hello__title {
-    @extend %titlestyle;
-    padding-top: 290px;
-    text-align: left;
+  @extend %titlestyle;
+  padding-top: 290px;
+  text-align: left;
 }
 .hello__sub-title {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
-    color: #828282;
-    padding-top: 9px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #828282;
+  padding-top: 9px;
 }
-.hello__image img  {
-    border-radius: 50%;
-    padding-top: 80px;
+.hello__image img {
+  border-radius: 50%;
+  padding-top: 80px;
 }
 .hello__buttons {
-    margin-top: 35px;
-    padding-bottom: 215px;
-    display: flex;
-    
-    .hello__button-g {
+  margin-top: 35px;
+  padding-bottom: 215px;
+  display: flex;
+
+  .hello__button-g {
     @extend %button;
     background: $green;
     margin-right: 10px;
-
+  }
+  .hello__button-b {
+    @extend %button;
+    background: #171717;
+    border: 1px solid #f2f2f2;
+    &:hover {
+      background: #474343;
     }
-    .hello__button-b {
-        @extend %button;
-        background: #171717;
-        border: 1px solid #F2F2F2;
-        &:hover {
-            background: #474343;
-        }
-    }
+  }
 }
 /*------------about------------*/
 .about {
-    padding-top: 21px;
-    padding-bottom: 42px;
+  padding-top: 21px;
+  padding-bottom: 42px;
 
-    .about__container {
-        @include desktop-container();
+  .about__container {
+    @include desktop-container();
 
-        .about__title {
-            @extend %titlestyle;
-            text-align: center;
-        }
-        .about__text {
-            @extend %textstyle;
-            text-align: center;
-            padding-top: 38px;
-        }
-        .about__contacts {
-            padding: 38px 118px 42px 146px;
-            display: flex;
-            justify-content: space-between;
-
-            .contacts__items {
-                text-align: center;
-                position: relative;
-            }
-            .contacts__circle img {
-                padding-top: 41%;
-            }
-            .contacts__circle {
-                background: $gray2;
-                border-radius: 50% ;
-                width: 62px;
-                height: 62px;
-                margin: 0 auto;
-                
-            }
-            .contacts__title {
-                padding-top: 18px;
-                font-weight: 700;
-                @extend %textstyle;
-            }
-            .contacts__text {
-                @extend %textstyle;
-            }
-        }
+    .about__title {
+      @extend %titlestyle;
+      text-align: center;
     }
+    .about__text {
+      @extend %textstyle;
+      text-align: center;
+      padding-top: 38px;
+    }
+    .about__contacts {
+      padding: 38px 118px 42px 146px;
+      display: flex;
+      justify-content: space-between;
+
+      .contacts__items {
+        text-align: center;
+        position: relative;
+      }
+      .contacts__circle img {
+        padding-top: 41%;
+      }
+      .contacts__circle {
+        background: $gray2;
+        border-radius: 50%;
+        width: 62px;
+        height: 62px;
+        margin: 0 auto;
+      }
+      .contacts__title {
+        padding-top: 18px;
+        font-weight: 700;
+        @extend %textstyle;
+      }
+      .contacts__text {
+        @extend %textstyle;
+      }
+    }
+  }
 }
 /*--------------------What i do-------------------*/
 .what {
+
     padding-top: 78px;
     padding-bottom: 60px; 
 
@@ -135,12 +138,7 @@
                     &:hover { 
                         &:after {
                             width: 100%; 
-                        }
-                    // border-bottom: 3px solid $green;
-                    // -webkit-animation: 5s infinite;
-                    // animation: 5s infinite;
-                   
-                   
+                    }
                 }
                 .what__icon {
                     width: 57;
@@ -157,57 +155,94 @@
             }    
         }
     }
+
+  padding-top: 78px;
+  padding-bottom: 60px;
+}
+.what__container {
+  @include desktop-container();
+  .what__title {
+    @extend %titlestyle;
+    text-align: center;
+  }
+  .what__items {
+    padding: 102px 45px 0;
+    display: flex;
+    justify-content: space-between;
+
+    ._b {
+      border-bottom: 3px solid $green;
+    }
+    .what__item {
+      @extend %what__item;
+      padding-left: 50px;
+      .what__icon {
+        width: 57;
+        height: 46px;
+        padding: 34px 0 29px 0;
+      }
+
+      .what__text {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 47px;
+        color: #535353;
+        padding-top: 29px;
+      }
+    }
+  }
+
 }
 /*----------------------my skills---------------------*/
 .mySkills {
-    padding-top: 95px;
-    padding-bottom: 69px;
+  padding-top: 95px;
+  padding-bottom: 69px;
 
-    .mySkills__container {
-        @include desktop-container();
+  .mySkills__container {
+    @include desktop-container();
 
-        .mySkills__title {
-            @extend %titlestyle;
-            text-align: center;
-            margin-bottom: 73px;
-        }
-
-        .mySkills__backg {
-            display: flex;
-            width: 1168px;
-            height: 235px;
-            background: $gray;
-            border: 1px solid $gray;
-            margin: 0 auto;
-            justify-content: space-around;
-            align-items: center;
-
-            .mySkills__progress {
-                font-weight: 700;
-                font-size: 72px;
-                line-height: 94px;
-                text-align: center;
-                color: $gray2;
-            }
-            .mySkills__text {
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 31px;
-                text-align: center;
-                color: $green;
-                text-transform: uppercase;
-            }
-        }
+    .mySkills__title {
+      @extend %titlestyle;
+      text-align: center;
+      margin-bottom: 73px;
     }
-    
+
+    .mySkills__backg {
+      display: flex;
+      width: 1168px;
+      height: 235px;
+      background: $gray;
+      border: 1px solid $gray;
+      margin: 0 auto;
+      justify-content: space-around;
+      align-items: center;
+
+      .mySkills__progress {
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 94px;
+        text-align: center;
+        color: $gray2;
+      }
+      .mySkills__text {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+        text-align: center;
+        color: $green;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 /*------------------Get in touch---------------*/
 .getInTouch {
-    padding-top: 31px;
-    padding-bottom: 51px;
+  padding-top: 31px;
+  padding-bottom: 51px;
 
-    .getInTouch__container {
-        @include desktop-container();
+  .getInTouch__container {
+    @include desktop-container();
+
 
         .getInTouch__title {
             @extend %titlestyle;
@@ -271,7 +306,58 @@
                 margin: 0 auto;
             }
         }
+
+    .getInTouch__title {
+      @extend %titlestyle;
+      padding-top: 31px;
+      padding-bottom: 53px;
+
     }
+    .getInTouch__form {
+      width: 750px;
+      margin: 0 auto;
+
+      .form__input {
+        display: flex;
+      }
+
+      .form__left {
+        margin-right: 37px;
+      }
+      input {
+        width: 358px;
+        border-bottom: 1px solid $gray2;
+        background: $black;
+        margin-top: 30px;
+        height: 28px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        color: $gray2;
+        padding-bottom: 10px;
+        font-family: "Roboto", sans-serif;
+      }
+      .form__textarea {
+        margin-bottom: 29px;
+      }
+      textarea {
+        margin-top: 47px;
+        width: 100%;
+        height: 109px;
+        border: 1px solid $gray2;
+        background: $black;
+        padding: 10px 12px;
+      }
+      .mySkills__button {
+        @extend %button;
+        background: $green;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 
