@@ -3,11 +3,19 @@
 *::after {
   box-sizing: border-box;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+input {
+  outline-style: none; color: rgb(175, 180, 175);
+}
+textarea {
+  color: rgb(175, 180, 175);
+  resize: none;
 }
 
 h1,
