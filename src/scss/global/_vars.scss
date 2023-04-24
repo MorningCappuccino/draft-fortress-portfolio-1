@@ -48,8 +48,6 @@ $breakpoints: (
   @include respond-above(md) {
     min-width: 1000px;
     max-width: 1303px;
-    margin: 0 auto;
-    padding: 0 15px;
   }
 }
 
