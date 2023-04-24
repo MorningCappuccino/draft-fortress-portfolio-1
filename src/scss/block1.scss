@@ -1,4 +1,4 @@
-@import "global/1vars";
+@import "global/vars";
 @import "base/mixins";
 
 .wrapper {
@@ -174,7 +174,7 @@
       border-bottom: 3px solid $green;
     }
     .what__item {
-      @extend %what__item;
+      // @extend %what__item;
       padding-left: 50px;
       .what__icon {
         width: 57;
