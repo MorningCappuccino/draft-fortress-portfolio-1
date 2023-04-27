@@ -1,0 +1,117 @@
+@import "global/vars";
+@import "base/mixins";
+
+/*----------------------ours skills---------------------*/
+.ourSkills {
+  padding: 95px 0 69px 0;
+  
+  @include respond-below(md) {
+    padding: 30px 0 30px 0;
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 73px;
+    font-weight: 700;
+    line-height: 62px;
+    color: $white;
+    
+    @include respond-above(md) {
+      font-size: 48px;
+    }
+
+    @include respond-below(md) {
+      font-size: 30px;
+    }
+  }
+
+  &__swiper-wrapper {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1168px;
+    min-width: 0;
+    height: 235px;
+    margin: 0 auto;
+    background-color: $gray;
+  }
+  &__slider {
+    position: relative;
+    padding: 0 50px;
+    min-width: 0;
+  }
+
+  &__progress {
+    text-align: center;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 94px;
+    color: $gray2;
+
+    @include respond-above(md) {
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 94px;
+    }
+
+    @include respond-below(md) {
+      font-weight: 600;
+      font-size: 55px;
+      line-height: 87px;
+    }
+  
+  }
+
+  &__text {
+    text-align: center;
+    color: $green;
+    text-transform: uppercase;
+
+    @include respond-above(md) {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    @include respond-below(md) {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
+  .slick-track {
+    display: flex;
+    align-items: flex-start;
+  }
+  .ourSkills__slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 0;
+  }
+
+  .ourSkills__slider .slick-arrow.slick-prev {
+    left: 0;
+    background: url('../img/ourSkills/arrow.png') 0 0 / 100% no-repeat;
+    border: none;
+  }
+
+  .ourSkills__slider .slick-arrow.slick-next {
+    right: 0;
+    background: url('../img/ourSkills/arrow.png') 0 0 / 100% no-repeat;
+    border: none;
+    transform: rotate(180deg);
+  }
+
+  
+}

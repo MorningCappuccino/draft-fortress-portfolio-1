@@ -1,56 +1,69 @@
+.header {
+   margin-bottom: 82px; 
 
-.header__container {
-    justify-content: space-between;
-    @include desktop-container();
-    display: flex;
-    align-items: center;
-    height: 103px; 
-    @include mobile-container();
+    &__container {
+        @include container();
 
-        .logo {
-            font-family: 'DM Sans';
-            font-weight: 700;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        height: 103px; 
+    }
+    .logo {
+        font-weight: 700;
+        margin-right: 20px;
+        font-family: Roboto,sans-serif;;
+        line-height: 47px;
+        color: $white ;
+        text-transform: uppercase;
+                
+        & span {
+            color: $green;
+        } 
+
+        @include respond-above (md) {
             font-size: 36px;
-            line-height: 47px;
-            color: $white ;
-            margin-right: 20px;
-            
-           @include respond-below(md) {
-            font-size: 30px;
-            }
-
-            //respond-below(md) { padding: 0;} 
         }
-        .navigation {
-            width: 333px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        @include respond-below(md) {
+            font-size: 30px;
+        }
+
+    }        
+    .navigation {
+        width: 333px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        @include respond-below(md) {
+            flex-wrap: wrap;
+            justify-content: end;
+            padding-top: 15px;
+        }
+            
+        a {
+            text-decoration: none;
+            color: $white;
+            font-weight: 400;
+            line-height: 23px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: $transition-duration;
+
+            @include respond-above(md) {
+                font-size: 18px;
+            } 
 
             @include respond-below(md) {
-                flex-wrap: wrap;
-                justify-content: end;
-                padding-top: 15px;
-            }
-    
-        a {
-                text-decoration: none;
-                color: $white;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 23px;
-                padding: 5px 10px;
-                border-radius: 15px;
-                transition: $transition-duration;
-                @include respond-below(md) {
-                    font-size: 15px;
-                  }
+                font-size: 15px;
+            }        
 
-                &:hover {
+            &:hover {
                 color: #5fd18f;
                 box-shadow: 1px 0px 15px #27AE60;
-                }
             }
-        }  
-      
-}
+        }
+    }  
+}       
+    
