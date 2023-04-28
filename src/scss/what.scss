@@ -11,6 +11,7 @@
   }    
 
   &__title {
+    margin-bottom: 102px;
     font-weight: 700;
     font-size: 48px;
     line-height: 62px;
@@ -25,22 +26,22 @@
       font-size: 30px;
     }
   }
-  
+
   &__items {
     display: flex;
+    margin: 0 auto;
+    max-width: 1168px;
 
     @include respond-above(md) {
       justify-content: space-between;
-      margin: 102px 4% 88px 65px ;
     }
 
     @include respond-below(md) {
       flex-wrap: wrap;
       justify-content: center;
-      margin: 0px;
     }
   }     
-  
+
   &__item {
     min-width: 257px;
     height: 241px;
@@ -54,7 +55,7 @@
       margin: 25px 25px;
       width: 40%;
     }
-                
+
     &__item:after {
       content: '';
       position: absolute;
@@ -65,7 +66,7 @@
       left: 0;
       background: $green;
       transition: all .5s;   
-                  
+
         &__item:hover { 
           &__item:after {
             width: 100%; 
@@ -74,7 +75,7 @@
         }
     }
   }       
-  
+
   &__icon {
     width: 57;
     padding: 34px 0 0 13%;
@@ -94,7 +95,7 @@
       @include respond-below(md) {
         font-size: 30px;
       }
-                    
+
   }
 }    
         

@@ -8,7 +8,7 @@
 @mixin desktop-container() {
   @include respond-above(md) {
     min-width: 1000px;
-    max-width: 1277px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 15px
   }

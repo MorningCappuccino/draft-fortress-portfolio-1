@@ -12,23 +12,9 @@
     .logo {
         font-weight: 700;
         margin-right: 20px;
-        font-family: Roboto,sans-serif;;
         line-height: 47px;
         color: $white ;
         text-transform: uppercase;
-                
-        & span {
-            color: $green;
-        } 
-
-        @include respond-above (md) {
-            font-size: 36px;
-        }
-
-        @include respond-below (md) {
-            font-size: 30px;
-        }
-
     }        
     .navigation {
         width: 333px;
