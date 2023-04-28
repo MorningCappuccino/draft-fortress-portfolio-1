@@ -55,8 +55,10 @@
   }
 }
 .contacts__items {
-    text-align: center;
-    margin: 20px 20px;
+  text-align: center;
+  margin: 20px 20px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .contacts__photo {
@@ -67,10 +69,9 @@
 
 .contacts__photo:hover {
   &:hover {
-    color: #5fd18f;
     border-radius: 20%;
-    box-shadow: 1px 0px 15px #27AE60;
-}
+    box-shadow: 5px 10px 20px #8ca094;
+  }
 }
     
 .contacts__photo img {
@@ -82,20 +83,22 @@
     
 .contacts__title {
   text-align: center;
-  padding-top: 18px;
+  padding-top: 8px;
   font-weight: 700;
   font-size: 18px;
   line-height: 23px;
   color: $white;
+  transform: translateZ(30px);
 }
 
 .contacts__text {
   font-weight: 400;
   line-height: 23px;
   color: $white;
+  transform: translateZ(30px);
 
   @include respond-above(md) {
-    font-size: 18px;
+    font-size: 13px;
   }
 
   @include respond-below(md) {
@@ -103,6 +106,9 @@
   }
 }
 
-
+span {
+  color:  $green;
+  font-weight: 700;
+}
       
     

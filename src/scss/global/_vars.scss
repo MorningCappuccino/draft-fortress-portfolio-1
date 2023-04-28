@@ -16,21 +16,6 @@ $breakpoints: (
   md: 1000px,
 );
 
-%button {
-  width: 143px;
-  height: 42px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: $white;
-  border: none;
-  display: block;
-  cursor: pointer;
-  &:hover {
-    background: #13492a;
-    transition: $transition-duration;
-  }
-}
 @mixin desktop-container() {
   @include respond-above(md) {
     min-width: 1000px;

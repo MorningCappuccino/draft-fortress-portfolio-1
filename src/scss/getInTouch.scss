@@ -3,7 +3,6 @@
 @import "base/mixins";
 
 .getInTouch {
-  @include container();
     padding-top: 31px;
     padding-bottom: 51px;
 
@@ -91,8 +90,21 @@
       padding: 10px 12px;
     }
   .mySkills__button {
-    @extend %button;
-    background: $green;
+    display: block;
+    width: 143px;
+    height: 42px;
     margin: 0 auto;
+    background-color: $green;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+    cursor: pointer;
+    
+    &:hover {
+      background: #13492a;
+      transition: $transition-duration;
+    }
   }
 }

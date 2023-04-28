@@ -5,4 +5,8 @@
     font-size: 14px;
     line-height: 18px;
     color: $gray2;
+
+    @include respond-below(md) {
+        margin-top: 50px;
+    }
 }
