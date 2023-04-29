@@ -5,16 +5,36 @@ $black: #212121;
 $gray: #333333;
 $gray2: #4F4F4F;
 
+$accent-color__Olya: #07b650;
+$accent-color__Ruslan: crimson;
+$accent-color__Alexandro: #2fa5b9;
+$accent-color__Valera:  #007fff;
 // END_COLORS
+
 // === TRANSITION
 $transition-function: ease-in-out;
 $transition-duration: 200ms;
 // === END_TRANSITION
+
 $breakpoints: (
   xs: 480px,
   sm: 768px,
   md: 1000px,
 );
+
+%titlestyle {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 62px;
+  color: $white;
+  text-align: center;
+}
+%textstyle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+}
 
 @mixin desktop-container() {
   @include respond-above(md) {
