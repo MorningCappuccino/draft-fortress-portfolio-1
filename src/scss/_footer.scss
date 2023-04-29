@@ -1,7 +1,12 @@
 .footer {
+    margin-top: 160px;
     height: 80px;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: $gray2;
+
+    @include respond-below(md) {
+        margin-top: 50px;
+    }
 }

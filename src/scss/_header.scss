@@ -1,37 +1,55 @@
+.header {
+   margin-bottom: 82px; 
 
-.header__container {
-    justify-content: space-between;
-    @include desktop-container();
-    display: flex;
+    &__container {
+        @include container();
 
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        height: 103px; 
+    }
     .logo {
-        padding: 28px 0;
-        font-family: 'DM Sans';
         font-weight: 700;
-        font-size: 36px;
+        margin-right: 20px;
         line-height: 47px;
         color: $white ;
-    }
+        text-transform: uppercase;
+    }        
     .navigation {
         width: 333px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-   
-       a {
+        
+        @include respond-below(md) {
+            flex-wrap: wrap;
+            justify-content: end;
+            padding-top: 15px;
+        }
+            
+        a {
             text-decoration: none;
             color: $white;
             font-weight: 400;
-            font-size: 18px;
             line-height: 23px;
             padding: 5px 10px;
             border-radius: 15px;
             transition: $transition-duration;
 
+            @include respond-above(md) {
+                font-size: 18px;
+            } 
+
+            @include respond-below(md) {
+                font-size: 15px;
+            }        
+
             &:hover {
-            color: #5fd18f;
-            box-shadow: 1px 0px 15px #27AE60;
+                color: #5fd18f;
+                box-shadow: 1px 0px 15px #27AE60;
             }
         }
     }  
-}
+}       
+    
