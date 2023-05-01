@@ -3,33 +3,36 @@
 @import "base/mixins";
 
 .about {
-  margin-top: 21px;
+  position: relative;
+  z-index: 2;
   margin-bottom: 42px;
-  
+  padding-top: 21px;
+  backdrop-filter: blur(2px);
+
   &__container {
     @include container();
-      
+
     display: flex;
     flex-direction: column;
     align-items: center;
-  }     
-  
+  }
+
   &__title {
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 62px;
-  color: $white;
-  text-align: center;
-  
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    color: $white;
+    text-align: center;
+
     @include respond-below(md) {
       font-size: 48px;
     }
-  
+
     @include respond-below(md) {
       font-size: 30px;
     }
   }
-  
+
   &__text {
     max-width: 745px;
     text-align: center;
@@ -38,16 +41,16 @@
     line-height: 23px;
     color: $white;
   }
-  
+
   &__contacts {
     display: flex;
     flex-wrap: wrap;
     width: 77%;
-       
+
     @include respond-above(md) {
       justify-content: space-around;
     }
-  
+
     @include respond-below(md) {
       justify-content: center;
       align-items: center;
@@ -63,13 +66,13 @@
     width: 160px;
     height: 200px;
   }
-  
+
   &__contacts-photo img {
     width: 100%;
     height: 100%;
     border-radius: 20%;
   }
-      
+
   &__contacts-title {
     text-align: center;
     padding-top: 8px;
@@ -93,6 +96,3 @@
     }
   }
 }
-
-      
-    
