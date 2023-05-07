@@ -15,7 +15,7 @@
 
 .promo {
   position: relative;
-  overflow: hidden;
+  z-index: 1;
 
   &__container {
     @include container();
