@@ -1,0 +1,34 @@
+[
+    {
+        "previewIcon": "../img/what/Vector1.svg",
+        "previewTitle": "Georgeous Flowers",
+        "picture": "../img/ourWorks/georgeous_flowers_1285.webp",
+        "techTags": ["PrestaShop", "HTML", "CSS"],
+        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+        "previewIcon": "../img/what/Vector2.svg",
+        "previewTitle": "Evropribor",
+        "picture": "../img/ourWorks/evropribor_1250.webp"
+    },
+    {
+        "previewIcon": "../img/what/Vector3.svg",
+        "previewTitle": "Aplisens Configurator",
+        "picture": "../img/ourWorks/aplisens_configurator_1285.webp"
+    },
+    {
+        "previewIcon": "../img/what/Vector3.svg",
+        "previewTitle": "FoodPicasso",
+        "picture": "../img/ourWorks/foodpicasso.webp"
+    },
+    {
+        "previewIcon": "../img/what/Vector3.svg",
+        "previewTitle": "Петербургская недвижимость",
+        "picture": "../img/ourWorks/speter.webp"
+    },
+    {
+        "previewIcon": "../img/what/Vector3.svg",
+        "previewTitle": "CITYMIX",
+        "picture": "../img/ourWorks/citymix.webp"
+    }
+]

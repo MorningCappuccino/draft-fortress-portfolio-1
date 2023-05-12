@@ -19,6 +19,8 @@
             margin: 0 auto;
             max-width: 1168px;
             justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 50px;
         }
     </style>
     <div class="what">
@@ -35,16 +37,19 @@
             const container = this.shadowRoot.querySelector('.what__items');
 
             items.map((item) => {
+                console.log(item);
                 const el = document.createElement("work-item");
 
                 el.setAttribute("preview-icon", item.previewIcon);
                 el.setAttribute("preview-title", item.previewTitle);
+                el.setAttribute("picture", item.picture);
+                el.setAttribute("description", item.description);
                 container.append(el);
             });
         }
 
         async getOurWorks() {
-            const res = await fetch('/js/json/our-works.json');
+            const res = await fetch('/json/our-works.json');
             const data = await res.json();
 
             this.renderOurWorkItems(data);
