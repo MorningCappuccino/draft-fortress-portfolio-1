@@ -1,0 +1,61 @@
+<template id="ourworks">
+    <style>
+        .what {
+            margin-top: 78px;
+            margin-bottom: 60px;
+        }
+
+        .what__title {
+            margin-bottom: 102px;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 62px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .what__items {
+            display: flex;
+            margin: 0 auto;
+            max-width: 1168px;
+            justify-content: space-between;
+        }
+    </style>
+    <div class="what">
+        <div class="what__container">
+            <div class="what__title">Our works</div>
+            <div class="what__items"></div>
+        </div>
+    </div>
+</template>
+
+<script>
+    class OurWorks extends HTMLElement {
+        renderOurWorkItems(items) {
+            const container = this.shadowRoot.querySelector('.what__items');
+
+            items.map((item) => {
+                const el = document.createElement("work-item");
+
+                el.setAttribute("preview-icon", item.previewIcon);
+                el.setAttribute("preview-title", item.previewTitle);
+                container.append(el);
+            });
+        }
+
+        async getOurWorks() {
+            const res = await fetch('/js/json/our-works.json');
+            const data = await res.json();
+
+            this.renderOurWorkItems(data);
+        }
+
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.append(ourworks.content.cloneNode(true));
+
+            this.getOurWorks();
+        }
+    }
+    customElements.define('our-works', OurWorks);
+</script>

@@ -1,0 +1,141 @@
+<template id="tmpl">
+    <style>
+        :host {
+            width: 30.5%;
+        }
+
+        .what__item {
+            padding: 35px 50px 36px;
+            background: var(--gray);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .what__icon {
+            margin-bottom: 30px;
+        }
+
+        .what__text {
+            font-weight: 500;
+            line-height: 47px;
+            color: #535353;
+            font-size: 36px;
+        }
+
+        .what__item:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 5px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: var(--green);
+            transition: width .5s;
+        }
+
+        .what__item:hover:after {
+            width: 100%;
+        }
+
+        /* modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(51, 51, 51, 0.5);
+        }
+
+        .modal.visible {
+            display: block;
+        }
+
+        .modal__dialog {
+            max-width: 800px;
+            margin-inline: auto;
+            margin-top: 50vh;
+        }
+
+        .modal__close {
+            cursor: pointer;
+        }
+    </style>
+    <div class="what__item">
+        <div class="what__icon">
+            <img src="../img/what/Vector1.svg" alt="Icon">
+        </div>
+        <div class="what__text">Software<br>
+            Development</div>
+    </div>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__close">
+                <img src="../img/x-mark-1.svg" alt="close icon" />
+            </div>
+            <div class="modal__proj">
+                <div class="modal__proj-picture"></div>
+                <div class="modal__proj-description">
+                    <div class="modal__proj-title"></div>
+                    <div class="modal__proj-tech-tags"></div>
+                    <div class="modal__proj-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    class WorkItem extends HTMLElement {
+        constructor() {
+            super();
+            // this.addEventListener('click', () => this.handleClick());
+        }
+
+        modal = null;
+        modalClose = null;
+        whatItem = null;
+        previewIconImg = null;
+        previewTitle = null;
+
+        handleClick() {
+            console.log('handleClick()');
+            this.modal.classList.add('visible');
+        }
+
+        handleModalClose() {
+            console.log('handleModalClose()');
+            this.modal.classList.remove('visible');
+        }
+
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+
+            this.shadowRoot.append(tmpl.content.cloneNode(true));
+
+            //block click
+            this.whatItem = this.shadowRoot.querySelector('.what__item');
+            this.whatItem.addEventListener('click', () => this.handleClick());
+
+            //modal close click
+            this.modal = this.shadowRoot.querySelector('.modal');
+            this.modalClose = this.modal.querySelector('.modal__close');
+            this.modalClose.addEventListener('click', () => this.handleModalClose());
+
+            //attributes
+            this.iconImg = this.shadowRoot.querySelector('.what__icon img');
+            this.iconImg.setAttribute('src', this.getAttribute('preview-icon'));
+
+            this.previewTitle = this.shadowRoot.querySelector('.what__text');
+            this.previewTitle.innerHTML = this.getAttribute('preview-title');
+
+            this.shadowRoot.querySelector('.modal__proj-title').innerHTML = this.getAttribute('preview-title');
+        }
+    }
+
+    customElements.define('work-item', WorkItem);
+</script>

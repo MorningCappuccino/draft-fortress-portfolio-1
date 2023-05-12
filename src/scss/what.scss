@@ -46,6 +46,8 @@
     min-width: 257px;
     height: 241px;
     background: $gray;
+    position: relative;
+    cursor: pointer;
 
     @include respond-above(md) {
       width: 30.5%;
@@ -56,23 +58,23 @@
       width: 40%;
     }
 
-    &__item:after {
+    &:after {
       content: '';
+      display: block;
       position: absolute;
       width: 0;
-      height: 2px;
+      height: 5px;
       bottom: 0;
       right: 0;
       left: 0;
       background: $green;
-      transition: all .5s;   
+      transition: width .5s;   
+    }
 
-        &__item:hover { 
-          &__item:after {
-            width: 100%; 
-            border-bottom: 1px solid $green;
-          }
-        }
+    &:hover {
+      &:after {
+        width: 100%; 
+      }
     }
   }       
 

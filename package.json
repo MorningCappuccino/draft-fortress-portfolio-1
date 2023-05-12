@@ -34,6 +34,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sass-bulk-importer": "^3.0.2",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-ttftowoff2": "^1.0.1",
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "imagemin-jpeg-recompress": "^7.1.0",
@@ -43,6 +44,7 @@
     "sass": "^1.62.0"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.4",
     "slick-carousel": "^1.8.1",
     "vanilla-tilt": "^1.8.0"
