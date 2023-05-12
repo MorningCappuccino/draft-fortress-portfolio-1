@@ -1,189 +1,189 @@
 @import "global/vars";
 
 @mixin card_img($color) {
-    transition: transform 0.5s cubic-bezier(0.660, 0.215, 0.295, 1.640);
-    
-    &:hover {
-        transform: translateY(-5%);
-        transition: transform 0.2s ease-in;
-        filter: drop-shadow(0 0 0.50rem $color);
-    }
+  transition: transform 0.5s cubic-bezier(0.66, 0.215, 0.295, 1.64);
+
+  &:hover {
+    transform: translateY(-5%);
+    transition: transform 0.2s ease-in;
+    filter: drop-shadow(0 0 0.5rem $color);
+  }
 }
 
-
 %card_role {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+}
+
+.container {
+  max-width: 1084px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.about-us {
+  position: relative;
+  z-index: 2;
+  padding-top: 47px;
+  backdrop-filter: blur(2px);
+
+  a {
+    text-decoration: none;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    color: $white;
+    text-align: center;
+    padding-bottom: 38px;
+  }
+
+  &__subtitle {
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
     color: $white;
-}
-
-
-.container {
-    max-width: 1084px;
+    max-width: 745px;
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+    text-align: center;
+    padding-bottom: 38px;
+  }
 
-.about-us {
-    padding-top: 47px;
-
-    a {
-        text-decoration: none;
-    }
-
-    &__title {
-        font-weight: 700;
-        font-size: 48px;
-        line-height: 62px;
-        color: $white;
-        text-align: center;
-        padding-bottom: 38px; 
-    }
-
-    &__subtitle {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: $white;
-        max-width: 745px;
-        margin: 0 auto;
-        text-align: center;
-        padding-bottom: 38px;
-    }
-    
-    &__us-row {
-        display: flex;
-        justify-content: space-between;
-         align-items: center;
-         padding-bottom: 75px;
-    }
+  &__us-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 75px;
+  }
 }
 
 // card__name
 .card {
+  &__Olya {
+    position: relative;
+    max-width: 166px;
 
-    &__Olya {
-        position: relative;
-        max-width: 166px;
-
-        &__body {
-            text-align: center;
-            padding-top: 25px;
-        }
-
-        &__name {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 23px;
-            color: $white;
-            margin-bottom: 3px;
-        
-            &:hover {
-                color:$accent-color__Olya;
-                transition: color 0.2s ease-in;
-            }
-        }
-
-        &__role {
-            @extend %card_role;
-        }
+    &__body {
+      text-align: center;
+      padding-top: 25px;
     }
 
-    &__Ruslan {
-        max-width: 166px;
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+      margin-bottom: 3px;
 
-        &__body {
-            text-align: center;
-            padding-top: 25px;
-        }
-
-        &__name {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 23px;
-            color: $white;
-            margin-bottom: 3px;
-        
-            &:hover {
-                color:$accent-color__Ruslan;
-                transition: color 0.2s ease-in;
-            }
-        }
-
-        &__role {
-            @extend %card_role;   
-        }
+      &:hover {
+        color: $accent-color__Olya;
+        transition: color 0.2s ease-in;
+      }
     }
 
-    &__Valery {
-        max-width: 166px;
-
-        &__body {
-            text-align: center;
-            padding-top: 25px;
-        }
-
-        &__name {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 23px;
-            color: $white;
-            margin-bottom: 3px;
-        
-            &:hover {
-                color:$accent-color__Valera;
-                transition: color 0.2s ease-in;
-            }
-        }
-
-        &__role {
-            @extend %card_role; 
-        }
+    &__role {
+      @extend %card_role;
     }
+  }
+
+  &__Ruslan {
+    max-width: 166px;
+
+    &__body {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+      margin-bottom: 3px;
+
+      &:hover {
+        color: $accent-color__Ruslan;
+        transition: color 0.2s ease-in;
+      }
+    }
+
+    &__role {
+      @extend %card_role;
+    }
+  }
+
+  &__Valery {
+    max-width: 166px;
+
+    &__body {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+      margin-bottom: 3px;
+
+      &:hover {
+        color: $accent-color__Valera;
+        transition: color 0.2s ease-in;
+      }
+    }
+
+    &__role {
+      @extend %card_role;
+    }
+  }
 }
 
 .card__Alexandr__body {
-    text-align: center;
-    max-width: 210px;
-    padding-top: 25px;
+  text-align: center;
+  max-width: 210px;
+  padding-top: 25px;
 }
 
-.card__Alexandr__name{
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 23px;
-    color: $white;
-    margin-bottom: 3px;
+.card__Alexandr__name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+  margin-bottom: 3px;
 
-    &:hover {
-        color:$accent-color__Alexandro;
-        transition: color 0.2s ease-in;
-    }
+  &:hover {
+    color: $accent-color__Alexandro;
+    transition: color 0.2s ease-in;
+  }
 }
 
 .card__Alexandr__role {
-    @extend %card_role; 
+  @extend %card_role;
 }
 
 //  card__img
 
 .card__Alexandr-img {
-   @include card_img($accent-color__Alexandro);
-   margin: 0 auto;
-   display: block;
+  @include card_img($accent-color__Alexandro);
+  margin: 0 auto;
+  display: block;
 }
 
 .card__Olya-img {
-    @include card_img($accent-color__Olya);
+  @include card_img($accent-color__Olya);
 }
 
 .card__Ruslan-img {
-    @include card_img($accent-color__Ruslan);
+  @include card_img($accent-color__Ruslan);
 }
 
 .card__Valery-img {
-    @include card_img($accent-color__Valera);
+  @include card_img($accent-color__Valera);
 }
 //  card__img
