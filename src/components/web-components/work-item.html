@@ -71,6 +71,11 @@
         .modal__close {
             cursor: pointer;
             float: right;
+            transition: opacity .3s ease;
+        }
+
+        .modal__close:hover {
+            opacity: .7;
         }
 
         .modal__proj {
@@ -113,6 +118,41 @@
         .modal__proj-description div div {
             display: inline;
             line-height: 23px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .what__item {
+                padding: 35px 10px 16px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            :host {
+                width: 100%;
+            }
+
+            .what__item {
+                padding: 35px 50px 36px;
+            }
+
+            .what__text {
+                /* font-size: 1rem; */
+            }
+
+            .modal__proj {
+                flex-direction: column;
+            }
+
+            .modal__close {
+                float: none;
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 10px;
+            }
+
+            .modal__proj-description {
+                padding-inline: 0;
+            }
         }
     </style>
     <div class="what__item">

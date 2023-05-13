@@ -4,17 +4,21 @@
         "previewTitle": "Georgeous Flowers",
         "picture": "../img/ourWorks/georgeous_flowers_1285.webp",
         "techTags": ["PrestaShop", "HTML", "CSS"],
-        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        "description": "eCommerce site of flower shop in the center of Manhattan. There you can find a lot of beautifyl flower kits and order it at any city of USA."
     },
     {
         "previewIcon": "../img/what/Vector2.svg",
         "previewTitle": "Evropribor",
-        "picture": "../img/ourWorks/evropribor_1250.webp"
+        "picture": "../img/ourWorks/evropribor_1250.webp",
+        "techTags": ["Wordpress", "PHP", "HTML", "CSS"],
+        "description": "This is the promo site for Evropribor company. Which provides information about it's products, services and benefits. Either you can find there map with the office locations and contact info."
     },
     {
         "previewIcon": "../img/what/Vector3.svg",
         "previewTitle": "Aplisens Configurator",
-        "picture": "../img/ourWorks/aplisens_configurator_1285.webp"
+        "picture": "../img/ourWorks/aplisens_configurator_1285.webp",
+        "techTags": ["Bootstrap", "jQuery", "HTML", "CSS"],
+        "description": "The idea was to create the order configurator for techniqual equipment: pressure gauges, depth probes and etc. You should pick the type or/and model of equipment, then it's characteristeics ony by one. And in the final step you can print order code."
     },
     {
         "previewIcon": "../img/what/Vector3.svg",
