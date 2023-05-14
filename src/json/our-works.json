@@ -23,16 +23,22 @@
     {
         "previewIcon": "../img/what/Vector3.svg",
         "previewTitle": "FoodPicasso",
-        "picture": "../img/ourWorks/foodpicasso.webp"
+        "techTags": ["Vue js", "HTML", "CSS"],
+        "picture": "../img/ourWorks/foodpicasso.webp",
+        "description": "The project provides an opportunity to get your website and mobile application based on the aggregator. This is convenient, since the FoodPicasso development team is responsible for maintaining the site."
     },
     {
         "previewIcon": "../img/what/Vector3.svg",
         "previewTitle": "Петербургская недвижимость",
-        "picture": "../img/ourWorks/speter.webp"
+        "techTags": ["Vue js", "Bootstrap", "jQuery", "HTML", "CSS", "SCSS"],
+        "picture": "../img/ourWorks/speter.webp",
+        "description": "The flagship website of a real estate company. The site presents a large number of services and filters for choosing the best option for buying a home. The site also contains a lot of useful information that will help the client make the most profitable deal for him."
     },
     {
         "previewIcon": "../img/what/Vector3.svg",
         "previewTitle": "CITYMIX",
-        "picture": "../img/ourWorks/citymix.webp"
+        "techTags": ["Vue js", "HTML", "CSS"],
+        "picture": "../img/ourWorks/citymix.webp",
+        "description": "The site is intended for news of the city of Grodno, advertising of various individual entrepreneurs. The site also contains various useful articles. The site has a multifunctional control panel where a registered user who is a client of the site can manage his advertising, view statistics, and conduct transactions with buyers."
     }
 ]
