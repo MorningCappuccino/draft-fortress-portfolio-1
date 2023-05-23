@@ -151,13 +151,14 @@
   &__canvas {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10vw;
     z-index: 1;
     width: 100vw;
     height: 100vh;
 
     @include respond-below(md) {
       top: 20px;
+      left: 0;
     }
   }
 }
