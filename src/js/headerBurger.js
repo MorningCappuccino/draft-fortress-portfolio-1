@@ -52,33 +52,33 @@ if (iconMenu) {
 
 //прокрутка при клике
 
-const navigationLinks = document.querySelectorAll('.navigation__link');
-if (navigationLinks.length > 0) {
-    navigationLinks.forEach(navigationLink => {
-        navigationLink.addEventListener("click", onNavigationLinkClick);
+document.querySelectorAll('a[href^="#about-us,#ourSkills,#getInTouch" ').forEach(link => {
 
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        let href = this.getAttribute('href').substring(1);
+
+        const scrollTarget = document.getElementById(href);
+
+        const topOffset = document.querySelector('.scrollto').offsetHeight;
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     });
+});
 
-    function onNavigationLinkClick(e) {
-        const navigationLink = e.target;
-        const hrefBlock = document.querySelector(navigationLink.href);
-       
-            window.scrollTo({
-                top: hrefBlock,
-                behavior: "smooth"
-            });
-            e.preventDefault();
-        }
 
-        const menuNavigationLinks = document.querySelector('.navigation');
+     const menuNavigationLinks = document.querySelector('.navigation');
     if (menuNavigationLinks) {
 
-    menuNavigationLinks.addEventListener("click", function (e) {
-        document.body.classList.remove('_lock');
-        iconMenu.classList.remove('_active');
-        menuNavigation.classList.remove('_active');
-    });
-
-         
+        menuNavigationLinks.addEventListener("click", function (e) {
+            document.body.classList.remove('_lock');
+            iconMenu.classList.remove('_active');
+            menuNavigation.classList.remove('_active');
+        });  
     }
-}
