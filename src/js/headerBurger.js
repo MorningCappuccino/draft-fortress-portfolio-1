@@ -2,23 +2,30 @@ const isMobile = {
     Android: function () {
         return navigator.userAgent.match(/Android/i);
     },
+
     BlackBerry: function () {
         return navigator.userAgent.match(/BlackBerry/i);
     },
-    // iOS: function () {
-    //     return navigator.userAgent.match(/iPhone/iPad/iPod/i);
-    // },
+
+    iOS: function () {
+        if (typeof window === `undefined` || typeof navigator === `undefined`) return false;
+
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === `[object Opera]`));
+    },
+
     Opera: function () {
         return navigator.userAgent.match(/Opera Mini/i);
     },
+
     Windows: function () {
         return navigator.userAgent.match(/IEMobile/i);
     },
+    
     any: function () {
         return (
             isMobile.Android() ||
             isMobile.BlackBerry() ||
-            // isMobile.iOS() ||
+            isMobile.iOS() ||
             isMobile.Opera() ||
             isMobile.Windows()
         );
@@ -45,7 +52,7 @@ if (iconMenu) {
 
 //прокрутка при клике
 
-const navigationLinks = document.querySelectorAll('.navigation__link[data-goto]');
+const navigationLinks = document.querySelectorAll('.navigation__link');
 if (navigationLinks.length > 0) {
     navigationLinks.forEach(navigationLink => {
         navigationLink.addEventListener("click", onNavigationLinkClick);
@@ -54,21 +61,24 @@ if (navigationLinks.length > 0) {
 
     function onNavigationLinkClick(e) {
         const navigationLink = e.target;
-        if (navigationLink.dataset.goto && document.querySelector(navigationLink.dataset.goto)) {
-            const gotoBlock = document.querySelector(navigationLink.dataset.goto);
-            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + 103 - document.querySelector("header").offsetHeight;
-            
-           if (iconMenu.classList.contains('_active')) {
-                document.body.classList.remove('_lock');
-                iconMenu.classList.remove('_active');
-                menuNavigation.classList.remove('_active');
-            }
-
+        const hrefBlock = document.querySelector(navigationLink.href);
+       
             window.scrollTo({
-                top: gotoBlockValue,
+                top: hrefBlock,
                 behavior: "smooth"
             });
             e.preventDefault();
         }
+
+        const menuNavigationLinks = document.querySelector('.navigation');
+    if (menuNavigationLinks) {
+
+    menuNavigationLinks.addEventListener("click", function (e) {
+        document.body.classList.remove('_lock');
+        iconMenu.classList.remove('_active');
+        menuNavigation.classList.remove('_active');
+    });
+
+         
     }
 }
