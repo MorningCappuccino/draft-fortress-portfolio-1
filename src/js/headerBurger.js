@@ -52,29 +52,34 @@ if (iconMenu) {
 
 //прокрутка при клике
 
-document.querySelectorAll('a[href^="#about-us,#ourSkills,#getInTouch" ').forEach(link => {
+const navigationLinks = document.querySelectorAll('.navigation__link');
+if (navigationLinks.length > 0) {
+    navigationLinks.forEach(navigationLink => {
+        navigationLink.addEventListener("click", onNavigationLinkClick);
 
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        let href = this.getAttribute('href').substring(1);
-
-        const scrollTarget = document.getElementById(href);
-
-        const topOffset = document.querySelector('.scrollto').offsetHeight;
-        const elementPosition = scrollTarget.getBoundingClientRect().top;
-        const offsetPosition = elementPosition - topOffset;
-
-        window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
     });
-});
+
+    function onNavigationLinkClick(e) {
+    const navigationLink = e.target;
+    console.log(navigationLink.getAttribute('href'));
+    const hrefBlock = document.querySelector(navigationLink.getAttribute('href'));
+ 
+
+    console.log("offsetHeight: " + hrefBlock.offsetHeight);
+    console.log("offsetTop: " + hrefBlock.offsetTop);
+   
+    window.scrollTo({
+        top: hrefBlock.offsetTop,
+        behavior: "smooth"
+    });
+    e.preventDefault();
+    }
+}
 
 
-     const menuNavigationLinks = document.querySelector('.navigation');
-    if (menuNavigationLinks) {
+
+    const menuNavigationLinks = document.querySelector('.navigation');
+        if (menuNavigationLinks) {
 
         menuNavigationLinks.addEventListener("click", function (e) {
             document.body.classList.remove('_lock');
