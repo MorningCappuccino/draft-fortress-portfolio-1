@@ -153,6 +153,11 @@
             .modal__proj-description {
                 padding-inline: 0;
             }
+
+            .modal__dialog {
+                max-height: calc(100vh - 50px);
+                overflow-y: scroll;
+            }
         }
     </style>
     <div class="what__item">
@@ -206,11 +211,13 @@
         handleClick() {
             console.log('handleClick()');
             this.modal.classList.add('visible');
+            document.querySelector('body').classList.add('stop-scrolling');
         }
 
         handleModalClose() {
             console.log('handleModalClose()');
             this.modal.classList.remove('visible');
+            document.querySelector('body').classList.remove('stop-scrolling');
         }
 
         connectedCallback() {

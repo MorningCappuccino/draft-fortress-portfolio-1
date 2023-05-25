@@ -25,7 +25,8 @@
     }
 
     @include respond-below(md) {
-      font-size: 30px;
+      font-size: var(--h-text-small);
+      margin-bottom: 40px;
     }
   }
 

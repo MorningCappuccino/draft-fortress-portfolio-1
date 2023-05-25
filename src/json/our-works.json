@@ -29,7 +29,7 @@
     },
     {
         "previewIcon": "../img/what/Vector3.svg",
-        "previewTitle": "Петербургская недвижимость",
+        "previewTitle": "Peter Real Estate",
         "techTags": ["Vue js", "Bootstrap", "jQuery", "HTML", "CSS", "SCSS"],
         "picture": "../img/ourWorks/speter.webp",
         "description": "The flagship website of a real estate company. The site presents a large number of services and filters for choosing the best option for buying a home. The site also contains a lot of useful information that will help the client make the most profitable deal for him."
