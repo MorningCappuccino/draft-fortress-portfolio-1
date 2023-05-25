@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+				content="Gulp pack for easy html/php markup development">
+	<meta name="keywords"
+				content="">
+	<link rel="shortcut icon"
+				href="img/favicons/favicon.svg"
+				type="image/svg+xml">
+	<link rel="shortcut icon"
+				href="img/favicons/favicon.webp"
+				type="image/webp">
+	<link rel="shortcut icon"
+				href="img/favicons/favicon.png"
+				type="image/x-icon">
+	<link rel="stylesheet"
+				href="css/libs.min.css">
+	<link rel="stylesheet"
+				href="css/style.min.css">
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+	<title>Easy-webdev-startpack v3.0</title>
+</head>
+
+
+<body>
+	<div class="Preloader">
+    <h1 class="Preloader__text"></h1>
+</div>
+	<div class="wrapper">
+		
+    <header class="header">
+        <div class="header__container">
+            <h2 class="logo"> code_go </h2>
+                <div class="header__icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header__navigation">
+                    <nav class="navigation">
+                        <a class="navigation__link"  href="#about-us">About me</a>
+                        <a class="navigation__link"   href="#ourSkills">Services</a>
+                        <a class="navigation__link"  href="#getInTouch" >Contact me</a>
+                    </nav>
+                </div>    
+        </div>    
+    </header>
+  
+
+
+		<main class="main">
+			<div class="promo">
+    <div class="promo__container">
+        <div class="promo__content">
+            <h1 class="promo__title">Hi, I am<br>
+                Oyindamola Bakare
+            </h1>
+            <div class="promo__sub-title">Frontend Developer</div>
+            <div class="promo__buttons">
+                <button class="promo__button-g" type="submit">Download CV</button>
+                <button class="promo__button-b" type="submit">Learn More</button>
+            </div>
+        </div>
+        <div class="promo__image_wrapper">
+            <img src="../img/people.png" alt="People" class="promo__image">
+        </div>
+    </div>
+    <canvas id="galaxy" class="promo__canvas" />
+</div>
+			<!-- SECTION about Us-->
+<section class="about-us" id="about-us">
+  <div class="container">
+    <div class="about-us__text">
+      <h2 class="about-us__title">About</h2>
+      <p class="about-us__subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident
+      </p>
+    </div>
+    <div class="about-us__us-row">
+      <a href="#" class="card__Olya">
+        <img src="/img/about/Olya.png" alt="Olya" class="card__Olya-img" />
+        <div class="card__Olya__body">
+          <p class="card__Olya__name">Olya Zhuleva</p>
+          <p class="card__Olya__role">Frontend Developer</p>
+        </div>
+      </a>
+      <a href="#" class="card__Ruslan">
+        <img
+          src="/img/about/Ruslan.png"
+          alt="Ruslan"
+          class="card__Ruslan-img"
+        />
+        <div class="card__Ruslan__body">
+          <p class="card__Ruslan__name">Ruslan Savchuk</p>
+          <p class="card__Ruslan__role">Frontend Developer</p>
+        </div>
+      </a>
+      <a href="#" class="card__Alexandr">
+        <img
+          src="/img/about/Alexander.png"
+          alt="Alexandr"
+          class="card__Alexandr-img"
+        />
+        <div class="card__Alexandr__body">
+          <p class="card__Alexandr__name">Alexander Minchenkov</p>
+          <p class="card__Alexandr__role">Lead Frontend Developer</p>
+        </div>
+      </a>
+      <a href="#" class="card__Valery">
+        <img
+          src="/img/about/Valery.png"
+          alt="Valery"
+          class="card__Valery-img"
+        />
+        <div class="card__Valery__body">
+          <p class="card__Valery__name">Valery Chyzhykau</p>
+          <p class="card__Valery__role">Backend Developer</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- //SECTION about Us-->
+
+			<our-works></our-works>
+			<div class="ourSkills" id="ourSkills">
+    <div class="ourSkills__container">
+        <div class="ourSkills__title">Our Skills</div>
+        <div class="ourSkills__swiper-wrapper">
+            <div class="ourSkills__slider">
+                <div class="ourSkills__item">
+                    <div class="ourSkills__progress">50%</div>
+                    <div class="ourSkills__text">html</div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">20%</div>
+                        <div class="ourSkills__text">css</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">10%</div>
+                        <div class="ourSkills__text">javascript</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">2%</div>
+                        <div class="ourSkills__text">php</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">50%</div>
+                        <div class="ourSkills__text">angular</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">20%</div>
+                        <div class="ourSkills__text">react</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">10%</div>
+                        <div class="ourSkills__text">nestjs</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">2%</div>
+                        <div class="ourSkills__text">nodejs</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">50%</div>
+                        <div class="ourSkills__text">jsAnimation</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">20%</div>
+                        <div class="ourSkills__text">expressjs</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">10%</div>
+                        <div class="ourSkills__text">design</div>
+                    </div>
+                </div>
+                <div class="ourSkills__swiper-slide">
+                    <div class="ourSkills__item">
+                        <div class="ourSkills__progress">2%</div>
+                        <div class="ourSkills__text">prototyping</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			<div class="getInTouch" id="getInTouch">
+    <div class="getInTouch__container">
+        <div class="getInTouch__title">Get in touch</div>
+        <form class="getInTouch__form form">
+            <div class="form__input">
+                <div class="form__left">
+                    <input name="name" placeholder="Name">
+                    <input name="name" placeholder="Lastname">
+                </div>
+                <div class="form__right">
+                    <input name="Email" type="email" placeholder="Email">
+                    <input name="number" type="number"  placeholder="Phone number">
+                </div>
+            </div>
+            <div class="form__textarea">
+                <textarea name="message" placeholder="Message" style="width: 100%;
+                height: 109px;"></textarea>
+            </div>
+
+            <button class="mySkills__button" >Submit now</button>
+        </form>
+    </div>
+</div>
+		</main>
+		<footer class="footer" style="text-align: center;">© Oyindamola 2020</footer>
+
+		<template id="tmpl">
+    <style>
+        :host {
+            width: 30.5%;
+        }
+
+        .what__item {
+            padding: 35px 50px 36px;
+            background: var(--gray);
+            position: relative;
+            cursor: pointer;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .what__icon {
+            margin-bottom: 30px;
+        }
+
+        .what__text {
+            font-weight: 500;
+            line-height: 47px;
+            color: #535353;
+            font-size: 36px;
+        }
+
+        .what__item:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 5px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: var(--green);
+            transition: width .5s;
+        }
+
+        .what__item:hover:after {
+            width: 100%;
+        }
+
+        /* modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(51, 51, 51, 0.5);
+        }
+
+        .modal.visible {
+            display: block;
+        }
+
+        .modal__dialog {
+            border: 3px solid #242424;
+            padding: 15px;
+            background: var(--gray);
+            max-width: 800px;
+            margin-inline: auto;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            color: var(--white);
+        }
+
+        .modal__close {
+            cursor: pointer;
+            float: right;
+            transition: opacity .3s ease;
+        }
+
+        .modal__close:hover {
+            opacity: .7;
+        }
+
+        .modal__proj {
+            display: flex;
+        }
+
+        .modal__proj-picture {
+            flex-basis: 60%;
+            flex-shrink: 0;
+        }
+
+        .modal__proj-picture img {
+            width: 100%;
+        }
+
+        .modal__proj-description {
+            padding: 15px;
+        }
+
+        .modal__proj-description span {
+            color: var(--light-gray);
+            text-transform: uppercase;
+            display: inline-block;
+            position: relative;
+        }
+
+        .modal__proj-description span::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .modal__proj-description div {
+            margin-bottom: 15px;
+        }
+
+        .modal__proj-description div div {
+            display: inline;
+            line-height: 23px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .what__item {
+                padding: 35px 10px 16px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            :host {
+                width: 100%;
+            }
+
+            .what__item {
+                padding: 35px 50px 36px;
+            }
+
+            .what__text {
+                /* font-size: 1rem; */
+            }
+
+            .modal__proj {
+                flex-direction: column;
+            }
+
+            .modal__close {
+                float: none;
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 10px;
+            }
+
+            .modal__proj-description {
+                padding-inline: 0;
+            }
+        }
+    </style>
+    <div class="what__item">
+        <div class="what__icon">
+            <img src="../img/what/Vector1.svg" alt="Icon">
+        </div>
+        <div class="what__text">Software<br>
+            Development</div>
+    </div>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__close">
+                <img src="../img/x-mark-1.svg" alt="close icon" />
+            </div>
+            <div class="modal__proj">
+                <div class="modal__proj-picture">
+                    <img src="" alt="">
+                </div>
+                <div class="modal__proj-description">
+                    <div class="modal__proj-title">
+                        <span>Project: </span>
+                        <div></div>
+                    </div>
+                    <div class="modal__proj-tech-tags">
+                        <span>Technologies: </span>
+                        <div></div>
+                    </div>
+                    <div class="modal__proj-text">
+                        <span>Description: </span>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    class WorkItem extends HTMLElement {
+        constructor() {
+            super();
+            // this.addEventListener('click', () => this.handleClick());
+        }
+
+        modal = null;
+        modalClose = null;
+        whatItem = null;
+        previewIconImg = null;
+        previewTitle = null;
+
+        handleClick() {
+            console.log('handleClick()');
+            this.modal.classList.add('visible');
+        }
+
+        handleModalClose() {
+            console.log('handleModalClose()');
+            this.modal.classList.remove('visible');
+        }
+
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+
+            this.shadowRoot.append(tmpl.content.cloneNode(true));
+
+            //block click
+            this.whatItem = this.shadowRoot.querySelector('.what__item');
+            this.whatItem.addEventListener('click', () => this.handleClick());
+
+            //modal close click
+            this.modal = this.shadowRoot.querySelector('.modal');
+            this.modalClose = this.modal.querySelector('.modal__close');
+            this.modalClose.addEventListener('click', () => this.handleModalClose());
+
+            //attributes
+            this.iconImg = this.shadowRoot.querySelector('.what__icon img');
+            this.iconImg.setAttribute('src', this.getAttribute('preview-icon'));
+
+            this.previewTitle = this.shadowRoot.querySelector('.what__text');
+            this.previewTitle.innerHTML = this.getAttribute('preview-title');
+
+            this.shadowRoot.querySelector('.modal__proj-title div').innerHTML = this.getAttribute('preview-title');
+            this.shadowRoot.querySelector('.modal__proj-picture img').setAttribute("src", this.getAttribute('picture'));
+            this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');
+        }
+    }
+
+    customElements.define('work-item', WorkItem);
+</script>
+		<template id="ourworks">
+    <style>
+        .what {
+            margin-top: 78px;
+            margin-bottom: 60px;
+        }
+
+        .what__title {
+            margin-bottom: 102px;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 62px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .what__items {
+            display: flex;
+            margin: 0 auto;
+            max-width: 1168px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 50px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .what {
+                margin-inline: 20px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .what__items {
+                row-gap: 25px;
+            }
+        }
+    </style>
+    <div class="what">
+        <div class="what__container">
+            <div class="what__title">Our works</div>
+            <div class="what__items"></div>
+        </div>
+    </div>
+</template>
+
+<script>
+    class OurWorks extends HTMLElement {
+        renderOurWorkItems(items) {
+            const container = this.shadowRoot.querySelector('.what__items');
+
+            items.map((item) => {
+                console.log(item);
+                const el = document.createElement("work-item");
+
+                el.setAttribute("preview-icon", item.previewIcon);
+                el.setAttribute("preview-title", item.previewTitle);
+                el.setAttribute("picture", item.picture);
+                el.setAttribute("description", item.description);
+                container.append(el);
+            });
+        }
+
+        async getOurWorks() {
+            const res = await fetch('/json/our-works.json');
+            const data = await res.json();
+
+            this.renderOurWorkItems(data);
+        }
+
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.append(ourworks.content.cloneNode(true));
+
+            this.getOurWorks();
+        }
+    }
+    customElements.define('our-works', OurWorks);
+</script>
+		
+
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+<script src="js/headerBurger.js"></script>
+<script src="js/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+	</div>
+</body>
+
+</html>

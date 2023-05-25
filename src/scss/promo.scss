@@ -14,6 +14,7 @@
 }
 
 .promo {
+  margin-top: 150px;
   position: relative;
   z-index: 1;
 
@@ -24,7 +25,12 @@
     z-index: 2;
     display: flex;
     justify-content: center;
+
     backdrop-filter: blur(2px);
+
+
+    padding-top: 103px;
+   
 
     @include respond-below(md) {
       flex-wrap: wrap;
