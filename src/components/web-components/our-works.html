@@ -60,11 +60,12 @@
                 el.setAttribute("preview-icon", item.previewIcon);
                 el.setAttribute("preview-title", item.previewTitle);
                 el.setAttribute("picture", item.picture);
+                el.setAttribute("technologies", item.techTags);
                 el.setAttribute("description", item.description);
                 container.append(el);
             });
         }
-
+        
         async getOurWorks() {
             const res = await fetch('/json/our-works.json');
             const data = await res.json();
@@ -78,6 +79,8 @@
 
             this.getOurWorks();
         }
+        
+    
     }
     customElements.define('our-works', OurWorks);
 </script>

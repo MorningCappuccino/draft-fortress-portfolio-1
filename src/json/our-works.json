@@ -10,7 +10,8 @@
         "previewIcon": "../img/what/Vector2.svg",
         "previewTitle": "Evropribor",
         "picture": "../img/ourWorks/evropribor_1250.webp",
-        "techTags": ["Wordpress", "PHP", "HTML", "CSS"],
+        "techTags": ["Wordpress" , "PHP" , "HTML" , "CSS"],
+       
         "description": "This is the promo site for Evropribor company. Which provides information about it's products, services and benefits. Either you can find there map with the office locations and contact info."
     },
     {

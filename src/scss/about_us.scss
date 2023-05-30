@@ -68,6 +68,13 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 75px;
+    column-gap: 15px;
+    
+    @include respond-below(md) {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -75,7 +82,7 @@
 .card {
   &__Olya {
     position: relative;
-    max-width: 166px;
+    min-width: 205px;
 
     &__body {
       text-align: center;
@@ -101,8 +108,7 @@
   }
 
   &__Ruslan {
-    max-width: 166px;
-
+    min-width: 205px;
     &__body {
       text-align: center;
       padding-top: 25px;
@@ -127,7 +133,7 @@
   }
 
   &__Valery {
-    max-width: 166px;
+    min-width: 205px;
 
     &__body {
       text-align: center;
@@ -155,7 +161,7 @@
 
 .card__Alexandr__body {
   text-align: center;
-  max-width: 210px;
+  max-width: 205px;
   padding-top: 25px;
 }
 
@@ -186,13 +192,19 @@
 
 .card__Olya-img {
   @include card_img($accent-color__Olya);
+  margin: 0 auto;
+  display: block;
 }
 
 .card__Ruslan-img {
   @include card_img($accent-color__Ruslan);
+  margin: 0 auto;
+  display: block;
 }
 
 .card__Valery-img {
   @include card_img($accent-color__Valera);
+  margin: 0 auto;
+  display: block;
 }
 //  card__img

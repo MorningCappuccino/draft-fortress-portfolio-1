@@ -91,6 +91,14 @@
             width: 100%;
         }
 
+        .modal__proj-tech-tags div {
+                margin: 5px;
+                padding: 5px;
+                border-radius: 10px;
+                color: var(--white);
+                background-color:  var(--light-gray);
+            }
+
         .modal__proj-description {
             padding: 15px;
         }
@@ -135,9 +143,9 @@
                 padding: 35px 50px 36px;
             }
 
-            .what__text {
-                /* font-size: 1rem; */
-            }
+            /* .what__text {
+                 font-size: 1rem; 
+            } */
 
             .modal__proj {
                 flex-direction: column;
@@ -243,9 +251,12 @@
 
             this.shadowRoot.querySelector('.modal__proj-title div').innerHTML = this.getAttribute('preview-title');
             this.shadowRoot.querySelector('.modal__proj-picture img').setAttribute("src", this.getAttribute('picture'));
+            this.shadowRoot.querySelector('.modal__proj-tech-tags div').innerHTML = this.getAttribute('technologies');
             this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');
+            
         }
     }
-
     customElements.define('work-item', WorkItem);
 </script>
+
+

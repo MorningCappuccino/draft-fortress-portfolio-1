@@ -33,7 +33,7 @@
 		
     <header class="header">
         <div class="header__container">
-            <h2 class="logo"> code_go </h2>
+            <h2 class="logo"><span class="logo__decor">{</span> code_go <span class="logo__decor">}</span></h2>
                 <div class="header__icon">
                     <span></span>
                     <span></span>
@@ -358,6 +358,14 @@
             width: 100%;
         }
 
+        .modal__proj-tech-tags div {
+                margin: 5px;
+                padding: 5px;
+                border-radius: 10px;
+                color: var(--white);
+                background-color:  var(--light-gray);
+            }
+
         .modal__proj-description {
             padding: 15px;
         }
@@ -402,9 +410,9 @@
                 padding: 35px 50px 36px;
             }
 
-            .what__text {
-                /* font-size: 1rem; */
-            }
+            /* .what__text {
+                 font-size: 1rem; 
+            } */
 
             .modal__proj {
                 flex-direction: column;
@@ -510,12 +518,16 @@
 
             this.shadowRoot.querySelector('.modal__proj-title div').innerHTML = this.getAttribute('preview-title');
             this.shadowRoot.querySelector('.modal__proj-picture img').setAttribute("src", this.getAttribute('picture'));
+            this.shadowRoot.querySelector('.modal__proj-tech-tags div').innerHTML = this.getAttribute('technologies');
             this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');
+            
         }
     }
-
     customElements.define('work-item', WorkItem);
 </script>
+
+
+
 		<template id="ourworks">
     <style>
         .what {
@@ -578,11 +590,12 @@
                 el.setAttribute("preview-icon", item.previewIcon);
                 el.setAttribute("preview-title", item.previewTitle);
                 el.setAttribute("picture", item.picture);
+                el.setAttribute("technologies", item.techTags);
                 el.setAttribute("description", item.description);
                 container.append(el);
             });
         }
-
+        
         async getOurWorks() {
             const res = await fetch('/json/our-works.json');
             const data = await res.json();
@@ -596,6 +609,8 @@
 
             this.getOurWorks();
         }
+        
+    
     }
     customElements.define('our-works', OurWorks);
 </script>
