@@ -94,10 +94,18 @@
         .modal__proj-tech-tags div {
                 margin: 5px;
                 padding: 5px;
+                
+            }
+            .modal__proj-tech-tags div div {
                 border-radius: 10px;
                 color: var(--white);
                 background-color:  var(--light-gray);
             }
+            .modal__proj-tech-tags span {
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            
 
         .modal__proj-description {
             padding: 15px;
@@ -251,8 +259,19 @@
 
             this.shadowRoot.querySelector('.modal__proj-title div').innerHTML = this.getAttribute('preview-title');
             this.shadowRoot.querySelector('.modal__proj-picture img').setAttribute("src", this.getAttribute('picture'));
-            this.shadowRoot.querySelector('.modal__proj-tech-tags div').innerHTML = this.getAttribute('technologies');
+            // this.shadowRoot.querySelector('.modal__proj-tech-tags div').innerHTML = this.getAttribute('technologies');
             this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');
+
+            const arr = this.getAttribute('technologies').split(',');
+
+            const techSelector = this.shadowRoot.querySelector('.modal__proj-tech-tags div');
+
+            arr.forEach((item) => {
+                const span = document.createElement('div');
+                span.innerHTML = item;
+
+                techSelector.append(span);
+            });
             
         }
     }

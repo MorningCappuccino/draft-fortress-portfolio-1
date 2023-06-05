@@ -65,12 +65,27 @@
                 container.append(el);
             });
         }
+        renderOurWorkTecnologies(technologies) {
+            const container = this.shadowRoot.querySelector('.modal__proj');
+
+            technologies.map((technologi) => {
+                console.log(technologi);
+                const ell = document.createElement("work-tecnologies");
+
+                
+                ell.setAttribute("technologies", technologi.techTags);
+                
+                container.append(ell);
+            });
+        }
+       
         
         async getOurWorks() {
             const res = await fetch('/json/our-works.json');
             const data = await res.json();
 
             this.renderOurWorkItems(data);
+            this.renderOurWorkTecnologies(data);
         }
 
         connectedCallback() {
@@ -78,6 +93,7 @@
             this.shadowRoot.append(ourworks.content.cloneNode(true));
 
             this.getOurWorks();
+            
         }
         
     
