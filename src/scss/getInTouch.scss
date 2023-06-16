@@ -34,14 +34,20 @@
     justify-content: center;
     max-width: 750px;
     margin: 0 auto;
-  }
-  
-  .form__input {
-    display: flex;
-  }
-  
-  .form__left {
-    margin-right: 37px;
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__top, &__bottom {
+      display: flex;
+      column-gap: 20px;
+
+      @include respond-below(xs) {
+        flex-direction: column;
+      }
+    }
   }
 
   .form__phone-number::-webkit-inner-spin-button {
