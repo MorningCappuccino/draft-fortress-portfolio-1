@@ -8,10 +8,16 @@
 
     $subject = "Get in touch";
     // $subject2 = "Copy of your get in touch form";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'] . "\n\n" . $_POST['phone_number'];
+    $message = '<html><body>';
+    $message .= '<b> ' . $first_name . " " . $last_name . "</b> wrote the following:" . "\n\n";
+    $message .= $_POST['message'] . "\n\n" . $phone_number . "\n" . $from;
+    $message .= '</body></html>';
     // $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
 
-    $headers = "From:" . $from;
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $header .= "Content-Type: text/html;charset=utf-8\r\n";
+    // $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "From:" . $from . "\r\n";
     // $headers2 = "From:" . $to;
     mail($to,$subject,$message,$headers);
     // mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
