@@ -1,0 +1,51 @@
+@keyframes flashing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.Preloader {
+  @include transition($transition-function, $transition-duration * 2, opacity);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  opacity: 1;
+  background-color: $black;
+  font-size: 26px;
+  line-height: 26px;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &__text {
+    position: relative;
+    color: $white;
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 48px;
+      width: 4px;
+      background-color: $white;
+      margin-top: -6px;
+      margin-left: 6px;
+      animation: flashing $transition-duration * 5 $transition-function infinite;
+      animation-delay: 2000ms;
+    }
+  }
+}

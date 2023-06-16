@@ -1,0 +1,88 @@
+<template id="ourworks">
+    <style>
+        .what {
+            margin-top: 78px;
+            margin-bottom: 60px;
+        }
+
+        .what__title {
+            margin-bottom: 100px;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 62px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .what__items {
+            display: flex;
+            margin: 0 auto;
+            max-width: 1168px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 50px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .what {
+                margin-inline: 20px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .what__items {
+                row-gap: 25px;
+            }
+
+            .what__title {
+                font-size: var(--h-text-small);
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+    <div class="what">
+        <div class="what__container">
+            <div class="what__title">Our works</div>
+            <div class="what__items"></div>
+        </div>
+    </div>
+</template>
+
+<script>
+    class OurWorks extends HTMLElement {
+        renderOurWorkItems(items) {
+            const container = this.shadowRoot.querySelector('.what__items');
+
+            items.map((item) => {
+                console.log(item);
+                const el = document.createElement("work-item");
+
+                el.setAttribute("preview-icon", item.previewIcon);
+                el.setAttribute("preview-title", item.previewTitle);
+                el.setAttribute("picture", item.picture);
+                el.setAttribute("technologies", item.techTags);
+                el.setAttribute("description", item.description);
+                container.append(el);
+            });
+        }
+       
+        
+        async getOurWorks() {
+            const res = await fetch('/json/our-works.json');
+            const data = await res.json();
+
+            this.renderOurWorkItems(data);
+        }
+
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.append(ourworks.content.cloneNode(true));
+
+            this.getOurWorks();
+            
+        }
+        
+    
+    }
+    customElements.define('our-works', OurWorks);
+</script>

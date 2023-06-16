@@ -1,0 +1,116 @@
+/*------------------Get in touch---------------*/
+@import "global/vars";
+@import "base/mixins";
+
+.getInTouch {
+    padding-top: 31px;
+    padding-bottom: 51px;
+
+  &__container {
+    @include container();
+  }
+  
+  &__title {
+    text-align: center;
+    padding-top: 31px;
+    padding-bottom: 53px;
+    font-weight: 700;
+    line-height: 62px;
+    color: $white;
+  
+    @include respond-above(md) {
+      font-size: 48px;
+    }
+  
+    @include respond-below(md) {
+      font-size: var(--h-text-small);
+      padding-bottom: 20px;
+    }
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  
+  .form__input {
+    display: flex;
+  }
+  
+  .form__left {
+    margin-right: 37px;
+  }
+
+  .form__phone-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    // -moz-appearance: textfield;
+  }
+  
+  input {
+    width: 100%;
+    height: 28px;
+    margin-top: 30px;
+    border: none;
+    border-bottom: 1px solid $gray2;
+    background-color: transparent;
+    outline-style: none;
+    }
+  
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+    border: 1px solid $gray;
+    -webkit-text-fill-color: $gray2;
+    -webkit-box-shadow: 0 0 0px 1000px $black inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input::placeholder, 
+  textarea::placeholder {
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray2;
+    font-family: 'Roboto', sans-serif;
+  }
+  .form__textarea {
+      margin-bottom: 29px;
+    }
+  
+    textarea {
+      margin-top: 47px;
+      max-width: 100%;
+      height: 109px;
+      border: 1px solid $gray2;
+      background: $black;      
+      padding: 10px 12px;
+    }
+  .mySkills__button {
+    display: block;
+    width: 143px;
+    height: 42px;
+    margin: 0 auto;
+    background-color: $green;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+    cursor: pointer;
+    
+    &:hover {
+      background: #13492a;
+      transition: $transition-duration;
+    }
+  }
+}

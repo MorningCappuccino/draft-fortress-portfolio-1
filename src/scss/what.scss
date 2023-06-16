@@ -1,0 +1,106 @@
+/*--------------------What i do-------------------*/
+@import "global/vars";
+@import "base/mixins";
+
+.what {
+  margin-top: 78px;
+  margin-bottom: 60px; 
+
+  &__container {
+    @include container();
+  }    
+
+  &__title {
+    margin-bottom: 102px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    color: $white;
+    text-align: center;
+
+    @include respond-above(md) {
+      font-size: 48px;
+    }
+
+    @include respond-below(md) {
+      font-size: 30px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1168px;
+
+    @include respond-above(md) {
+      justify-content: space-between;
+    }
+
+    @include respond-below(md) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }     
+
+  &__item {
+    min-width: 257px;
+    height: 241px;
+    background: $gray;
+    position: relative;
+    cursor: pointer;
+
+    @include respond-above(md) {
+      width: 30.5%;
+    }
+
+    @include respond-below(md) {
+      margin: 25px 25px;
+      width: 40%;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 5px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: $green;
+      transition: width .5s;   
+    }
+
+    &:hover {
+      &:after {
+        width: 100%; 
+      }
+    }
+  }       
+
+  &__icon {
+    width: 57;
+    padding: 34px 0 0 13%;
+  }
+
+  &__text {
+    padding: 29px 0 0 13%;
+    font-weight: 500;
+    line-height: 47px;
+    color: #535353;
+    padding: 29px 0 0 13%;
+
+    @include respond-above(md) {
+      font-size: 36px;
+    }
+
+      @include respond-below(md) {
+        font-size: 30px;
+      }
+
+  }
+}    
+        
+    
+
+  

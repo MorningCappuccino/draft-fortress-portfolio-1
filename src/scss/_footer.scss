@@ -1,0 +1,37 @@
+.footer {
+  margin-top: 160px;
+  height: 80px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: $gray2;
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+  }
+
+  &__icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  &__icon svg {
+    @include transition($transition-function, $transition-duration * 2, color, transform);
+
+    width: 24px;
+    height: 24px;
+    transform: scale(1);
+    color: $white;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $green;
+    }
+  }
+
+  @include respond-below(md) {
+    margin-top: 50px;
+  }
+}

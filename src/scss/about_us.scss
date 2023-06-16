@@ -1,0 +1,210 @@
+@import "global/vars";
+@import "base/mixins";
+
+@mixin card_img($color) {
+  transition: transform 0.5s cubic-bezier(0.66, 0.215, 0.295, 1.64);
+
+  &:hover {
+    transform: translateY(-5%);
+    transition: transform 0.2s ease-in;
+    filter: drop-shadow(0 0 0.5rem $color);
+  }
+}
+
+%card_role {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+}
+
+.container {
+  max-width: 1084px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.about-us {
+  position: relative;
+  z-index: 2;
+  padding-top: 75px;
+  backdrop-filter: blur(2px);
+
+  a {
+    text-decoration: none;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    color: $white;
+    text-align: center;
+    padding-bottom: 38px;
+
+    @include respond-below(sm) {
+      font-size: var(--h-text-small); 
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: $white;
+    max-width: 745px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 38px;
+
+    @include respond-below(sm) {
+      font-size: 16px; 
+    }
+  }
+
+  &__us-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 75px;
+    column-gap: 15px;
+    
+    @include respond-below(md) {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// card__name
+.card {
+  &__Olya {
+    position: relative;
+    min-width: 205px;
+
+    &__body {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+      margin-bottom: 3px;
+
+      &:hover {
+        color: $accent-color__Olya;
+        transition: color 0.2s ease-in;
+      }
+    }
+
+    &__role {
+      @extend %card_role;
+    }
+  }
+
+  &__Ruslan {
+    min-width: 205px;
+    &__body {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+      margin-bottom: 3px;
+
+      &:hover {
+        color: $accent-color__Ruslan;
+        transition: color 0.2s ease-in;
+      }
+    }
+
+    &__role {
+      @extend %card_role;
+    }
+  }
+
+  &__Valery {
+    min-width: 205px;
+
+    &__body {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+      margin-bottom: 3px;
+
+      &:hover {
+        color: $accent-color__Valera;
+        transition: color 0.2s ease-in;
+      }
+    }
+
+    &__role {
+      @extend %card_role;
+    }
+  }
+}
+
+.card__Alexandr__body {
+  text-align: center;
+  max-width: 205px;
+  padding-top: 25px;
+}
+
+.card__Alexandr__name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+  margin-bottom: 3px;
+
+  &:hover {
+    color: $accent-color__Alexandro;
+    transition: color 0.2s ease-in;
+  }
+}
+
+.card__Alexandr__role {
+  @extend %card_role;
+}
+
+//  card__img
+
+.card__Alexandr-img {
+  @include card_img($accent-color__Alexandro);
+  margin: 0 auto;
+  display: block;
+}
+
+.card__Olya-img {
+  @include card_img($accent-color__Olya);
+  margin: 0 auto;
+  display: block;
+}
+
+.card__Ruslan-img {
+  @include card_img($accent-color__Ruslan);
+  margin: 0 auto;
+  display: block;
+}
+
+.card__Valery-img {
+  @include card_img($accent-color__Valera);
+  margin: 0 auto;
+  display: block;
+}
+//  card__img

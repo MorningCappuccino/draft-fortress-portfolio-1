@@ -3,11 +3,28 @@
 *::after {
   box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import 'node_modules/font-awesome/css/font-awesome';
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+body._lock {
+  overflow: hidden;
+}
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+input {
+  outline-style: none; color: rgb(175, 180, 175);
+}
+textarea {
+  color: rgb(175, 180, 175);
+  resize: none;
 }
 
 h1,
@@ -18,4 +35,9 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
