@@ -1,0 +1,14 @@
+# .htaccess main domain to subfolder redirect
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^(www.)?codegoteam.com$
+RewriteCond %{REQUEST_URI} !^/build/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /build/$1
+
+RewriteCond %{HTTP_HOST} ^(www.)?codegoteam.com$
+
+RewriteRule ^(/)?$ build/index.html [L]
