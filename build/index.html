@@ -33,7 +33,7 @@
 		
     <header class="header">
         <div class="header__container">
-            <h2 class="logo"> code_go </h2>
+            <h2 class="logo"><span class="logo__decor">{</span> code_go <span class="logo__decor">}</span></h2>
                 <div class="header__icon">
                     <span></span>
                     <span></span>
@@ -358,18 +358,40 @@
             width: 100%;
         }
 
+        .modal__proj-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 5px;
+            align-items: center;
+        }
+
+        .modal__proj-tech-tags div {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .modal__proj-tech-tags span:not(.head) {
+            border-radius: 10px;
+            color: var(--white);
+            background-color:  var(--light-gray);
+            padding: 1px 10px;
+            line-height: 25px;
+        }
+            
         .modal__proj-description {
             padding: 15px;
         }
 
-        .modal__proj-description span {
+        .modal__proj-description span.head {
+            /* margin-bottom: 10px; */
             color: var(--light-gray);
             text-transform: uppercase;
             display: inline-block;
             position: relative;
         }
 
-        .modal__proj-description span::after {
+        .modal__proj-description span.head::after {
             content: '';
             position: absolute;
             display: block;
@@ -402,9 +424,9 @@
                 padding: 35px 50px 36px;
             }
 
-            .what__text {
-                /* font-size: 1rem; */
-            }
+            /* .what__text {
+                 font-size: 1rem; 
+            } */
 
             .modal__proj {
                 flex-direction: column;
@@ -445,15 +467,14 @@
                 </div>
                 <div class="modal__proj-description">
                     <div class="modal__proj-title">
-                        <span>Project: </span>
+                        <span class="head">Project: </span>
                         <div></div>
                     </div>
                     <div class="modal__proj-tech-tags">
-                        <span>Technologies: </span>
-                        <div></div>
+                        <span class="head">Technologies: </span>
                     </div>
                     <div class="modal__proj-text">
-                        <span>Description: </span>
+                        <span class="head">Description: </span>
                         <div></div>
                     </div>
                 </div>
@@ -487,6 +508,27 @@
             document.querySelector('body').classList.remove('stop-scrolling');
         }
 
+        renderTechTags() {
+            const arr = this.getAttribute('technologies').split(',');
+
+            const techSelector = this.shadowRoot.querySelector('.modal__proj-tech-tags');
+
+            arr.forEach((item) => {
+                const span = document.createElement('span');
+                span.innerHTML = item;
+
+                techSelector.append(span);
+            }); 
+        }
+
+        closeModalOnEscape() {
+            document.addEventListener('keydown', (event) => {
+                if (event.key == 'Escape') {
+                    this.handleModalClose();
+                }
+            });
+        }
+
         connectedCallback() {
             this.attachShadow({ mode: 'open' });
 
@@ -501,6 +543,8 @@
             this.modalClose = this.modal.querySelector('.modal__close');
             this.modalClose.addEventListener('click', () => this.handleModalClose());
 
+            this.closeModalOnEscape();
+
             //attributes
             this.iconImg = this.shadowRoot.querySelector('.what__icon img');
             this.iconImg.setAttribute('src', this.getAttribute('preview-icon'));
@@ -510,12 +554,16 @@
 
             this.shadowRoot.querySelector('.modal__proj-title div').innerHTML = this.getAttribute('preview-title');
             this.shadowRoot.querySelector('.modal__proj-picture img').setAttribute("src", this.getAttribute('picture'));
-            this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');
+            this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');    
+        
+            this.renderTechTags();
         }
     }
-
     customElements.define('work-item', WorkItem);
 </script>
+
+
+
 		<template id="ourworks">
     <style>
         .what {
@@ -578,11 +626,13 @@
                 el.setAttribute("preview-icon", item.previewIcon);
                 el.setAttribute("preview-title", item.previewTitle);
                 el.setAttribute("picture", item.picture);
+                el.setAttribute("technologies", item.techTags);
                 el.setAttribute("description", item.description);
                 container.append(el);
             });
         }
-
+       
+        
         async getOurWorks() {
             const res = await fetch('/json/our-works.json');
             const data = await res.json();
@@ -595,7 +645,10 @@
             this.shadowRoot.append(ourworks.content.cloneNode(true));
 
             this.getOurWorks();
+            
         }
+        
+    
     }
     customElements.define('our-works', OurWorks);
 </script>
