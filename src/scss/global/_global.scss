@@ -8,6 +8,7 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
+  user-select: none;
 }
 body._lock {
   overflow: hidden;
@@ -20,7 +21,8 @@ ul {
 }
 
 input {
-  outline-style: none; color: rgb(175, 180, 175);
+  outline-style: none;
+  color: rgb(175, 180, 175);
 }
 textarea {
   color: rgb(175, 180, 175);
