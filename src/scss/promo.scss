@@ -1,5 +1,5 @@
-@import "global/vars";
-@import "base/mixins";
+@import 'global/vars';
+@import 'base/mixins';
 
 .wrapper {
   display: flex;
@@ -28,9 +28,7 @@
 
     backdrop-filter: blur(2px);
 
-
     padding-top: 103px;
-   
 
     @include respond-below(md) {
       flex-wrap: wrap;
