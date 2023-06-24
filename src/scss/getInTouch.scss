@@ -6,6 +6,12 @@
   padding-top: 31px;
   padding-bottom: 51px;
 
+  &__form-wrapper {
+    position: relative;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
   &__container {
     @include container();
   }
@@ -13,7 +19,7 @@
   &__title {
     text-align: center;
     padding-top: 31px;
-    padding-bottom: 53px;
+    // padding-bottom: 53px;
     font-weight: 700;
     line-height: 62px;
     color: $white;
@@ -32,12 +38,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 750px;
-    margin: 0 auto;
 
-    &__input {
+
+    &__inputs {
       display: flex;
       flex-direction: column;
+
+      .input-wrap {
+        width: 100%;
+      }
+
+      input:focus+.input-bottom {
+        width: 100%;
+      }
+
+      .input-bottom {
+        width: 0;
+        height: 1px;
+        background: $green;
+        transition: width .5s;
+      }
     }
 
     &__top,
@@ -90,26 +110,26 @@
     color: $gray2;
     font-family: 'Roboto', sans-serif;
   }
-  .form__textarea {
-    margin-bottom: 29px;
-  }
 
   textarea {
-    margin-top: 47px;
-    max-width: 100%;
+    width: 100%;
     min-height: 109px;
+    margin-top: 47px;
+    margin-bottom: 29px;
+    padding: 10px 12px;
     border: 1px solid $gray2;
     background: $black;
-    padding: 10px 12px;
+    transition: border $transition-duration;
 
     &:focus-visible {
       outline: none;
+      border: 1px solid $green;
     }
   }
+
   .mySkills__button {
     display: block;
-    width: 143px;
-    height: 42px;
+    padding: 14px 30px;
     margin: 0 auto;
     background-color: $green;
     border: none;
@@ -118,10 +138,110 @@
     line-height: 18px;
     color: $white;
     cursor: pointer;
+    border: 1px solid $green;
+    transition: all $transition-duration;
 
     &:hover {
-      background: #13492a;
-      transition: $transition-duration;
+      // background: #13492a;
+      background: transparent;
+      padding: 15px 32px;
+      // transform: scale(1.1);
+
+    }
+  }
+
+  @keyframes opa-anima {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes de-opa-anima {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes mark-anima {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(0.8);
+    }
+    45% {
+      transform: scale(1.2);
+    }
+    60% {
+      transform: scale(0.9);
+    }
+    70% {
+      transform: scale(1.1);
+    }
+    80% {
+      transform: scale(0.95);
+    }
+    90% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes de-mark-anima {
+    to {
+      transform: scale(0);
+    }
+  }
+
+  &__successful {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray;
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+
+    &.activeD {
+      // 3s infinite alternate slidein;
+      animation: 1s opa-anima;
+    }
+
+    &.de-activeD {
+      animation: 1s de-opa-anima;
+    }
+
+    &-circle {
+      background: $green;
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+
+      &.markD {
+        animation: 1s mark-anima;
+      }
+
+      &.de-markD {
+        animation: 1s de-mark-anima;
+      }
+
+      img {
+        width: 100%;
+        position: relative;
+        top: 6px;
+      }
     }
   }
 }
