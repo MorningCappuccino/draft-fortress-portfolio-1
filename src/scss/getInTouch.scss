@@ -140,6 +140,7 @@
     cursor: pointer;
     border: 1px solid $green;
     transition: all $transition-duration;
+    outline: none;
 
     &:hover {
       // background: #13492a;
