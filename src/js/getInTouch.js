@@ -33,6 +33,8 @@
     function fireSuccessfulState() {
         successfulElement.classList.add('active', 'activeD');
         successfulCircle.classList.add('markD');
+
+        form.reset();
     }
 
     function killSucessfulState() {
