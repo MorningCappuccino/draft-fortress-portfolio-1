@@ -4,10 +4,6 @@
             width: 30.5%;
         }
 
-        .what__item-wrap {
-            filter: blur(1px);
-        }
-
         .what__open-mobile {
             display: none;
             position: absolute;
@@ -22,6 +18,10 @@
         @media screen and (max-width: 767px) {
             .what__open-mobile {
                 display: block;
+            }
+
+            .what__item-wrap {
+                filter: blur(1px);
             }
         }
 
@@ -128,11 +128,11 @@
         .modal__proj-tech-tags span:not(.head) {
             border-radius: 10px;
             color: var(--white);
-            background-color:  var(--light-gray);
+            background-color: var(--light-gray);
             padding: 1px 10px;
             line-height: 25px;
         }
-            
+
         .modal__proj-description {
             padding: 15px;
         }
@@ -275,7 +275,7 @@
                 span.innerHTML = item;
 
                 techSelector.append(span);
-            }); 
+            });
         }
 
         closeModalOnEscape() {
@@ -311,12 +311,10 @@
 
             this.shadowRoot.querySelector('.modal__proj-title div').innerHTML = this.getAttribute('preview-title');
             this.shadowRoot.querySelector('.modal__proj-picture img').setAttribute("src", this.getAttribute('picture'));
-            this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');    
-        
+            this.shadowRoot.querySelector('.modal__proj-text div').innerHTML = this.getAttribute('description');
+
             this.renderTechTags();
         }
     }
     customElements.define('work-item', WorkItem);
 </script>
-
-
