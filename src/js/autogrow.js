@@ -34,5 +34,5 @@ function autogrow(textarea) {
   };
 }
 
-const textarea = document.documentElement.querySelector('.form__textarea_input');
+const textarea = document.documentElement.querySelector('.form__textarea');
 autogrow(textarea);
