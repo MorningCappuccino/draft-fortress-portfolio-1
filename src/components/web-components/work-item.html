@@ -4,6 +4,27 @@
             width: 30.5%;
         }
 
+        .what__item-wrap {
+            filter: blur(1px);
+        }
+
+        .what__open-mobile {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 6px 12px;
+            color: var(--green);
+            background: var(--light-gray);
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 767px) {
+            .what__open-mobile {
+                display: block;
+            }
+        }
+
         .what__item {
             padding: 35px 50px 36px;
             background: var(--gray);
@@ -183,11 +204,14 @@
         }
     </style>
     <div class="what__item">
-        <div class="what__icon">
-            <img src="../img/what/Vector1.svg" alt="Icon">
+        <div class="what__open-mobile">open</div>
+        <div class="what__item-wrap">
+            <div class="what__icon">
+                <img src="../img/what/Vector1.svg" alt="Icon">
+            </div>
+            <div class="what__text">Software<br>
+                Development</div>
         </div>
-        <div class="what__text">Software<br>
-            Development</div>
     </div>
     <div class="modal">
         <div class="modal__dialog">

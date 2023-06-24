@@ -37,6 +37,7 @@
     @include respond-below(sm) {
       flex: 0 1 90%;
     }
+
     &__decor {
       font-size: 30px;
       font-weight: 700;
@@ -81,17 +82,21 @@
       }
     }
   }
+
   .header__icon._active span:nth-of-type(1) {
     display: none;
   }
+
   .header__icon._active span:nth-of-type(2) {
     top: 50%;
     transform: translate(-50%, 0%) rotate(45deg);
   }
+
   .header__icon._active span:nth-of-type(3) {
     top: 50%;
     transform: translate(-50%, 0%) rotate(-45deg);
   }
+
   .navigation {
     position: relative;
     display: flex;
@@ -133,14 +138,32 @@
     }
 
     a {
+      position: relative;
       text-decoration: none;
       color: $white;
       font-weight: 400;
       line-height: 23px;
       padding: 5px 10px;
       border-radius: 15px;
-      transition: $transition-duration;
       z-index: 5;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: $green;
+        transition: width .4s;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
 
       @include respond-above(md) {
         font-size: 18px;

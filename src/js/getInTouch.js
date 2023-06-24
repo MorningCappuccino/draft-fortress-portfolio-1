@@ -4,7 +4,8 @@
     const successfulElement = document.querySelector(".getInTouch__successful");
     const successfulCircle = document.querySelector(".getInTouch__successful-circle");
 
-    sendButton.addEventListener('click', (ev) => sendForm(ev));
+    // sendButton.addEventListener('click', (ev) => sendForm(ev));
+    form.addEventListener('submit', (ev) => sendForm(ev));
 
     //TODO: form validation
     function sendForm(ev) {
