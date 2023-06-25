@@ -104,6 +104,7 @@
 
     &__role {
       @extend %card_role;
+      color: $green;
     }
   }
 
@@ -129,6 +130,7 @@
 
     &__role {
       @extend %card_role;
+      color: $green;
     }
   }
 
@@ -155,6 +157,7 @@
 
     &__role {
       @extend %card_role;
+      color: $green;
     }
   }
 }
@@ -180,6 +183,7 @@
 
 .card__Alexandr__role {
   @extend %card_role;
+  color: $green;
 }
 
 //  card__img
