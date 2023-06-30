@@ -89,6 +89,35 @@
     margin-top: 22px;
   }
 
+  &__icons {
+    display: flex;
+    justify-content: start;
+    column-gap: 20px;
+  }
+
+  &__icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  &__icon svg {
+    @include transition($transition-function, $transition-duration * 2, color, transform);
+
+    width: 24px;
+    height: 24px;
+    transform: scale(1);
+    color: $white;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $green;
+    }
+  }
+
+  @include respond-below(md) {
+    margin-top: 50px;
+  }
+
   &__text {
     font-size: 15px;
     color: $white;
