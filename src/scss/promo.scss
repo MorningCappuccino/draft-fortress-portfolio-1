@@ -47,8 +47,19 @@
     }
 
     @include respond-below(md) {
-      padding-left: 0px;
-      margin-right: 0px;
+      // flex: 1 0 100%;
+      // padding-top: 80px;
+
+      position: absolute;
+      top: 68%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respond-below(sm) {
+      width: 80vw;
+      top: 51%;
+      left: 58%;
     }
   }
 
@@ -137,6 +148,10 @@
     @include respond-above(md) {
       width: 650px;
       padding-bottom: 650px;
+    }
+
+    @include respond-below(sm) {
+      height: 100vh;
     }
   }
 
