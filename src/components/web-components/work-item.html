@@ -1,5 +1,17 @@
 <template id="tmpl">
     <style>
+        @keyframes showing {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         :host {
             width: 30.5%;
         }
@@ -19,13 +31,10 @@
             .what__open-mobile {
                 display: block;
             }
-
-            .what__item-wrap {
-                filter: blur(1px);
-            }
         }
 
         .what__item {
+            animation: showing 0.4s ease-in-out;
             padding: 35px 50px 36px;
             background: var(--gray);
             position: relative;
@@ -35,7 +44,19 @@
         }
 
         .what__icon {
+            position: relative;
+            width: 58px;
+            height: 0;
             margin-bottom: 30px;
+            padding-bottom: 58px;
+        }
+
+        .what__icon img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .what__text {

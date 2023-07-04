@@ -16,27 +16,12 @@
 
         .what__items {
             display: flex;
-            margin: 0 auto;
+            margin: 0 auto 50px auto;
             max-width: 1168px;
             justify-content: space-between;
             flex-wrap: wrap;
             row-gap: 50px;
-        }
-
-        .what__toggle {
-            display: block;
-            background-color: none;
-            border: none;
-            outline: none;
-            /* border-color: #27AE60; */
-        }
-
-        @media screen and (min-width: 1024px) {
-            .what__items {
-                max-height: 544px;
-                margin-bottom: 50px;
-                overflow: hidden;
-            }
+            transition: max-height 0.4s ease-in-out;
         }
 
         @media screen and (max-width: 1024px) {
@@ -55,18 +40,100 @@
                 margin-bottom: 40px;
             }
         }
+
+        .what__toggle {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            background-color: inherit;
+            border: none;
+            outline: none;
+        }
+
+        .what__toggle::before,
+        .what__toggle::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 2px;
+            margin: auto;
+            border-radius: 4px;
+            background-color: var(--green);
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            .what__toggle::before,
+            .what__toggle::after {
+                width: 35%;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            .what__toggle::before,
+            .what__toggle::after {
+                width: 20%;
+            }
+        }
+
+        .what__toggle span {
+            position: relative;
+            z-index: 3;
+            display: block;
+            width: fit-content;
+            margin: auto;
+            padding: 10px;
+            clip-path: polygon(52% 0, 100% 0, 100% 89%, 53% 100%, 0 100%, 0 9%);
+            border: 1px solid var(--green);
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .what__toggle span {
+                transition: color 0.2s ease-in-out, clip-path 0.4s ease-in-out;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .what__toggle span:hover {
+                clip-path: polygon(59% 0, 100% 0, 100% 50%, 61% 100%, 0 100%, 0 32%);
+                color: rgba(39, 174, 96, 0.8)
+            }
+        }
+
+        .what__toggle::before {
+            left: 0;
+        }
+
+        .what__toggle::after {
+            right: 0;
+        }
     </style>
     <div class="what">
         <div class="what__container">
             <div class="what__title">Our works</div>
             <div class="what__items"></div>
-            <button type="button" class="what__toggle">Show more</button>
+            <button type="button" class="what__toggle">
+                <span>Show more</span>
+            </button>
         </div>
     </div>
 </template>
 
 <script>
     class OurWorks extends HTMLElement {
+        constructor() {
+            super();
+            this.initItems = [];
+            this.visibleItems = [];
+        }
+
         renderOurWorkItems(items) {
             const container = this.shadowRoot.querySelector('.what__items');
 
@@ -80,22 +147,49 @@
                 el.setAttribute("description", item.description);
                 container.append(el);
             });
+
+            this.checkMax(container);
         }
 
+        checkMax(container) {
+            if (this.initItems.length === this.visibleItems.length) {
+                this.shadowRoot.querySelector('.what__toggle').style.display = 'none';
+                return;
+            }
+        }
+
+        addMoreItems(init, visible) {
+            const { length: initLength } = init;
+            const { length: visibleLength } = visible;
+            const to = (initLength / visibleLength) > 1 ? (visibleLength + 6) : initLength - visibleLength
+
+            this.visibleItems = visible.concat(init.slice(visibleLength, to));
+
+            this.renderOurWorkItems(init.slice(visibleLength, to));
+        }
 
         async getOurWorks() {
             const res = await fetch('/json/our-works.json');
             const data = await res.json();
 
-            this.renderOurWorkItems(data);
+            this.initItems = data;
+            this.visibleItems = data.slice(0, data.length > 6 ? 6 : data.length);
+
+            this.renderOurWorkItems(this.visibleItems);
         }
 
-        connectedCallback() {
+        async connectedCallback() {
             this.attachShadow({ mode: 'open' });
             this.shadowRoot.append(ourworks.content.cloneNode(true));
 
-            this.getOurWorks();
+            await this.getOurWorks();
 
+            this.shadowRoot.querySelector('.what__toggle').addEventListener(
+                'click',
+                () => {
+                    this.addMoreItems(this.initItems, this.visibleItems)
+                }
+            );
         }
 
 
