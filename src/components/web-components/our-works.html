@@ -23,6 +23,22 @@
             row-gap: 50px;
         }
 
+        .what__toggle {
+            display: block;
+            background-color: none;
+            border: none;
+            outline: none;
+            /* border-color: #27AE60; */
+        }
+
+        @media screen and (min-width: 1024px) {
+            .what__items {
+                max-height: 544px;
+                margin-bottom: 50px;
+                overflow: hidden;
+            }
+        }
+
         @media screen and (max-width: 1024px) {
             .what {
                 margin-inline: 20px;
@@ -44,6 +60,7 @@
         <div class="what__container">
             <div class="what__title">Our works</div>
             <div class="what__items"></div>
+            <button type="button" class="what__toggle">Show more</button>
         </div>
     </div>
 </template>
@@ -64,8 +81,8 @@
                 container.append(el);
             });
         }
-       
-        
+
+
         async getOurWorks() {
             const res = await fetch('/json/our-works.json');
             const data = await res.json();
@@ -78,10 +95,10 @@
             this.shadowRoot.append(ourworks.content.cloneNode(true));
 
             this.getOurWorks();
-            
+
         }
-        
-    
+
+
     }
     customElements.define('our-works', OurWorks);
 </script>
